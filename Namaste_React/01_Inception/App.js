@@ -1,12 +1,14 @@
+//* how to create element using react
+// use React.createElement('tag name', { id: "heading"  here we give attributes}, 'content inside tag')
 const heading = React.createElement('h1', { id: "heading" /* here we give attributes*/}, 'Hello world from React')
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(heading)
-console.log(heading) // it will return an object
+// console.log(heading) // it will return an object
 // this was the simple syntax to create only 1 element
 
-//? how to create nested element
+//* how to create nested element
 /**
  *<div class="parent">
  *  <div class="child">
@@ -24,3 +26,17 @@ const parent = React.createElement(
     React.createElement("h1", {}, "i'm an h1 tag")
   )
 )
+
+root.render(parent)
+// calling root.render replaces the existing content inside the root container
+// since we are calling root.render(heading) first and then root.render(parent)
+// it overwrites the previous render
+
+//? parent is a react element
+// which is object
+// and then this react object becomes HTML that the browser understand
+
+// React.createElement doesn't create HTML
+
+//* how to create siblings
+
