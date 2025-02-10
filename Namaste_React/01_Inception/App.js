@@ -6,9 +6,8 @@ const heading = React.createElement(
   'Hello world from React'
 )
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
 
-root.render(heading)
+// root.render(heading)
 // console.log(heading) // it will return an object
 // this was the simple syntax to create only 1 element
 
@@ -31,7 +30,7 @@ const parent = React.createElement(
   )
 )
 
-root.render(parent)
+// root.render(parent)
 // calling root.render replaces the existing content inside the root container
 // since we are calling root.render(heading) first and then root.render(parent)
 // it overwrites the previous render
@@ -54,7 +53,7 @@ const parent2 = React.createElement(
   // you wrap them inside an array
 )
 
-root.render(parent2)
+// root.render(parent2)
 
 // other example
 // using array
@@ -74,8 +73,9 @@ const parent3 = React.createElement(
   // you wrap them inside an array
 )
 
-root.render(parent3)
-
 // it does make our code look hard to understand
 // that's why we use jsx, but this is the core of react
 // we will no longer be using React.createElement
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(parent3)
