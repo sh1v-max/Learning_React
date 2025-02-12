@@ -1,3 +1,7 @@
+//* importing react
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 //* how to create element using react
 // use React.createElement('tag name', { id: "heading"  here we give attributes}, 'content inside tag')
 const heading = React.createElement(
