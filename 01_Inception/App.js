@@ -78,4 +78,5 @@ const parent3 = React.createElement(
 // we will no longer be using React.createElement
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
+// root is ReactDOMRoot {}
 root.render(parent3)
