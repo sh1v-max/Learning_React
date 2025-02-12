@@ -1,0 +1,18 @@
+{
+  "name": "learning_react",
+  "version": "1.0.0",
+  "description": "this is namaste react by akshay saini",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/sh1v-max/Learning_React.git)"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "wazir",
+  "license": "ISC"
+}
