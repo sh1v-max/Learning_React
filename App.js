@@ -25,8 +25,20 @@ const jsxHeading = <h1 className="head">Hello, React! using JSX🚀</h1>;
 // giving class using jsx as className, but not class...... it's not html
 //? to add attribute in jsx, use camelCase
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+//? multiple line in jsx
+const heading0 = (
+  <h1 id="h1" key="h1">
+    This is JSX
+  </h1>
+);
+// for multiple line, we need to wrap in ()
 
+
+
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading);
 root.render(jsxHeading);
 
