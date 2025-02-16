@@ -20,7 +20,10 @@ const heading = React.createElement(
 // js engine can't understand JSX
 // but parcel < babel run in properly
 
-const jsxHeading = <h1 id="heading">Hello, React! using JSX🚀</h1>;
+// const jsxHeading = <h1 id="heading">Hello, React! using JSX🚀</h1>;
+const jsxHeading = <h1 className="head">Hello, React! using JSX🚀</h1>;
+// giving class using jsx as className, but not class...... it's not html
+//? to add attribute in jsx, use camelCase
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
