@@ -38,12 +38,20 @@ const heading0 = (
 // Class component - old way of writing component
 
 //& react functional component
-// functional component is a function that returns a react element or JSX
+// functional component is a just a normal js function that returns a react element or JSX
 // we should always start component name with capital letter
 
 //? HeadingComponent is a functional component
 // example 1
+// we can use both arrow function and normal function
+// we have to use return keyword in normal function
+// arrow function is more preferable
+// arrow function
 const HeadingComponent  = () => {
+  return <h1>Hello, React! using functional component🚀</h1>
+}
+// normal function
+const HeadingComponent02 =  function(){
   return <h1>Hello, React! using functional component🚀</h1>
 }
 
@@ -61,17 +69,16 @@ const HeadingComponent3  = () => <h1>Hello, React! using functional component�
 const HeadingComponent4  = () => (
   <div id = "container">
     <h1 className = "heading">Hello, React! using functional component🚀</h1>
-    <h2>Line 2</h2>
+    <h2>There goes the second line</h2>
   </div>
 )
 // two or more sibling require a wrapping parent element, we can use <></> or <div></div>
 
-// example 5
-const Title = () => {
-  return (
-    <h1 id="title" key="title">Namaste React</h1>
-  )
-}
+// example 5/ using one component inside another
+//? also known as component composition
+const Title = () => (
+  <h1 id="title" key="title">Namaste React from title</h1>
+)
 
 const HeadingComponent5 = function (){
   return (
@@ -102,14 +109,44 @@ const Heading00 = () => (
 )
 
 //================================================================================================
+//& using {} allow embedding JavaScript expressions inside JSX
+ 
+// react element
+const title = (
+  <h1 id="h1" key="h1">
+    This is JSX
+  </h1>
+)
+// title is just a normal js object/variable
+
+const name = 'John Doe'
+
+const jsx = (
+<div>
+  <h1>hello</h1>
+  <h2>{name}</h2>
+  <h2>{100 + 200}</h2>
+  <h2>{console.log("Hello Wazir")}</h2> 
+  {/* return Hello Wazir in consol */}
+  {title}
+  {/* this will inject react element inside component  */}
+</div>
+)
+/* you can inject any js code inside curly braces */
+
+//? we can't use if else in jsx
+
+//================================================================================================
 //* rendering react element
 const root = ReactDOM.createRoot(document.getElementById('root'))
 // root.render(heading);
-root.render(jsxHeading)
+root.render(jsx);
+// root.render(jsxHeading)
 
 // we can not render react component like react element
 // we need to wrap it in < />
-root.render(<HeadingComponent4/>)
+// root.render(<HeadingComponent4/>)
+// root.render(<HeadingComponent5/>)
 
 // console.log(heading)
 // console.log(jsxHeading)
