@@ -150,6 +150,7 @@ const reactElement = (
     {/* <h2>{<ReactComponent />}</h2> */}
     {/* can not access before initialization */}
     {ReactComponent()}
+    {/* we can call the function too */}
     {/* <h2>{name}</h2> */}
     {/* <h2>{100 + 200}</h2> */}
     <h2>{console.log('Hello Wazir')}</h2>
