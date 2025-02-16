@@ -3,7 +3,7 @@
 ## **What is a React Component?**  
 A **React component** is a reusable piece of UI that controls how a part of the web page looks and behaves. Instead of writing an entire page in one file, React lets you break it into **small, independent components** that can be reused and managed easily.  
 
----
+
 
 ## **1. Functional Components** (Modern Approach ✅)  
 ### **What are Functional Components?**  
@@ -12,7 +12,6 @@ A **functional component** is a simple JavaScript function that:
 - Returns **JSX (HTML-like syntax)** to define the UI.
 - Is **stateless** by default but can manage state using **React Hooks**.
 
----
 
 ### **Example: Simple Functional Component**
 ```jsx
@@ -25,7 +24,7 @@ export default Greeting;
 - This function returns **JSX** (`<h1>Hello, World!</h1>`).
 - **No `class` keyword** is needed.
 
----
+
 
 ### **Props in Functional Components**  
 Props (short for **properties**) allow components to receive data from their parent.
@@ -42,7 +41,7 @@ const Greeting = (props) => {
 - `name="Alice"` is passed as a **prop** to the `Greeting` component.
 - Inside the component, `{props.name}` dynamically displays the name.
 
----
+
 
 ### **State in Functional Components (Using Hooks)**  
 Functional components can manage state using **React Hooks**, mainly `useState`.
@@ -69,7 +68,7 @@ export default Counter;
 2. `setCount(count + 1)` updates the state when the button is clicked.
 3. React **re-renders** the component whenever state changes.
 
----
+
 
 ### **Lifecycle Methods in Functional Components (`useEffect`)**
 Functional components use `useEffect` to perform **side effects** (e.g., fetching data, DOM updates).
@@ -97,7 +96,7 @@ export default DataFetcher;
 - Fetches data from an API.
 - Updates the state (`setData(data)`), causing a re-render.
 
----
+
 
 ## **2. Class Components** (Older Approach ❌)  
 ### **What are Class Components?**  
@@ -105,7 +104,7 @@ Class components use ES6 **class syntax** and **extend `React.Component`**. They
 - Hold **state** inside a `this.state` object.
 - Use **lifecycle methods** for side effects (`componentDidMount`, `componentDidUpdate`).
 
----
+
 
 ### **Example: Simple Class Component**
 ```jsx
@@ -122,7 +121,7 @@ export default Greeting;
 - Uses a **class** instead of a function.
 - Must include a `render()` method to return JSX.
 
----
+
 
 ### **Props in Class Components**
 ✅ **Example: Class Component with Props**
@@ -138,7 +137,7 @@ class Greeting extends Component {
 ```
 - Props are accessed using `this.props`.
 
----
+
 
 ### **State in Class Components**
 ✅ **Example: Class Component with State**
@@ -170,7 +169,7 @@ export default Counter;
 2. `this.setState({ count: this.state.count + 1 })` updates the state.
 3. React **re-renders** the component when the state changes.
 
----
+
 
 ### **Lifecycle Methods in Class Components**
 | Method | Purpose |
@@ -200,7 +199,7 @@ export default DataFetcher;
 - `componentDidMount()` fetches data **after** the component is mounted.
 - `setState()` updates the component when data is received.
 
----
+
 
 ## **Functional vs. Class Components (Comparison)**
 | Feature | Functional Components ✅ | Class Components ❌ |
@@ -212,7 +211,7 @@ export default DataFetcher;
 | Code Size | **Shorter, cleaner** | More boilerplate code |
 | Hooks Support | ✅ Yes | ❌ No |
 
----
+
 
 ## **Conclusion**
 - ✅ **Functional components** are **preferred** because they are **simpler, faster, and require less code**.
