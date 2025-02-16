@@ -30,9 +30,53 @@ const heading0 = (
 )
 // for multiple line, we need to wrap in ()
 
+
+//* react component
+// Functional component - new way of writing component 
+// Class component - old way of writing component
+
+//? react functional component
+// functional component is a function that returns a react element or JSX
+// we should always start component name with capital letter
+
+//^ HeadingComponent is a functional component
+const HeadingComponent  = () => {
+  return <h1>Hello, React! using functional component🚀</h1>
+}
+
+const HeadingComponent2  = () => (
+  <h1 className = "heading">Hello, React! using functional component🚀</h1>
+)
+// if we want to return multiple line or add attributes, we need to wrap in ()
+
+const HeadingComponent3  = () => <h1>Hello, React! using functional component🚀</h1>
+// short hand syntax of arrow function
+
+// another example
+const Title = () => {
+  return (
+    <h1 id="title" key="title">Namaste React</h1>
+  )
+}
+
+const HeaderComponent4 = function (){
+  return (
+    <div>
+      <Title/>
+      {/* we can also use <Title()> */}
+      {/* we can also use <Title></Title> */}
+      {console.log(10)}
+    <h1>Namaste React Functional component</h1>
+    <h2>This is h2 tag</h2>
+    </div>
+  )
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 // root.render(heading);
 root.render(jsxHeading)
+// root.render(<HeaderComponent4/>)
 
 console.log(heading)
 console.log(jsxHeading)
