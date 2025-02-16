@@ -34,7 +34,7 @@ const heading0 = (
 
 //================================================================================================
 //* react component
-// Functional component - new way of writing component 
+// Functional component - new way of writing component
 // Class component - old way of writing component
 
 //& react functional component
@@ -47,28 +47,30 @@ const heading0 = (
 // we have to use return keyword in normal function
 // arrow function is more preferable
 // arrow function
-const HeadingComponent  = () => {
+const HeadingComponent = () => {
   return <h1>Hello, React! using functional component🚀</h1>
 }
 // normal function
-const HeadingComponent02 =  function(){
+const HeadingComponent02 = function () {
   return <h1>Hello, React! using functional component🚀</h1>
 }
 
 // example 2
-const HeadingComponent2  = () => (
-  <h1 className = "heading">Hello, React! using functional component🚀</h1>
+const HeadingComponent2 = () => (
+  <h1 className="heading">Hello, React! using functional component🚀</h1>
 )
 // if we want to return multiple line or add attributes, we need to wrap in ()
 
 // example 3
-const HeadingComponent3  = () => <h1>Hello, React! using functional component🚀</h1>
+const HeadingComponent3 = () => (
+  <h1>Hello, React! using functional component🚀</h1>
+)
 // short hand syntax of arrow function
 
 // example 4
-const HeadingComponent4  = () => (
-  <div id = "container">
-    <h1 className = "heading">Hello, React! using functional component🚀</h1>
+const HeadingComponent4 = () => (
+  <div id="container">
+    <h1 className="heading">Hello, React! using functional component🚀</h1>
     <h2>There goes the second line</h2>
   </div>
 )
@@ -77,18 +79,20 @@ const HeadingComponent4  = () => (
 // example 5/ using one component inside another
 //? also known as component composition
 const Title = () => (
-  <h1 id="title" key="title">Namaste React from title</h1>
+  <h1 id="title" key="title">
+    Namaste React from title
+  </h1>
 )
 
-const HeadingComponent5 = function (){
+const HeadingComponent5 = function () {
   return (
     <div>
-      <Title/>
+      <Title />
       {/* we can also use <Title()> */}
       {/* we can also use <Title></Title> */}
       {console.log(10)}
-    <h1>Namaste React Functional component</h1>
-    <h2>This is h2 tag</h2>
+      <h1>Namaste React Functional component</h1>
+      <h2>This is h2 tag</h2>
     </div>
   )
 }
@@ -110,27 +114,50 @@ const Heading00 = () => (
 
 //================================================================================================
 //& using {} allow embedding JavaScript expressions inside JSX
- 
+
+const elem = <span>React Element</span>
+const name = 'John Doe'
+
 // react element
 const title = (
-  <h1 id="h1" key="h1">
-    This is JSX
-  </h1>
+  <>
+    <h1 id="h1" key="h1">This is JSX</h1>
+    <h2>{elem}</h2>
+    <h2>{name}</h2>
+  </>
 )
 // title is just a normal js object/variable
 
-const name = 'John Doe'
+//================================================================================================
+//& playing more with react element, react component, and JSX
+const ReactComponent = () => (
+  <div>
+    <h1>hello</h1>
+    {/* <h2>{reactElement}</h2> */}
+    <h2>{name}</h2>
+    <h2>{100 + 200}</h2>
+    <h2>{console.log('Hello Wazir')}</h2>
+    {/* return Hello Wazir in consol */}
+    {/* {title} */}
+    {/* this will inject react element inside component  */}
+    {/* {elem} */}
+  </div>
+)
 
-const jsx = (
-<div>
-  <h1>hello</h1>
-  <h2>{name}</h2>
-  <h2>{100 + 200}</h2>
-  <h2>{console.log("Hello Wazir")}</h2> 
-  {/* return Hello Wazir in consol */}
-  {title}
-  {/* this will inject react element inside component  */}
-</div>
+const reactElement = (
+  <div>
+    {/* <h1>hello</h1> */}
+    {/* <h2>{<ReactComponent />}</h2> */}
+    {/* can not access before initialization */}
+    {ReactComponent()}
+    {/* <h2>{name}</h2> */}
+    {/* <h2>{100 + 200}</h2> */}
+    <h2>{console.log('Hello Wazir')}</h2>
+    {/* return Hello Wazir in consol */}
+    {title}
+    {/* this will inject react element inside component  */}
+    {/* {elem} */}
+  </div>
 )
 /* you can inject any js code inside curly braces */
 
@@ -140,7 +167,9 @@ const jsx = (
 //* rendering react element
 const root = ReactDOM.createRoot(document.getElementById('root'))
 // root.render(heading);
-root.render(jsx);
+// root.render(title)
+root.render(reactElement);
+// root.render(<ReactComponent/>);
 // root.render(jsxHeading)
 
 // we can not render react component like react element
