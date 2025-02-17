@@ -12,12 +12,12 @@ const heading = React.createElement('h1', { id: 'heading' }, 'Hello, React!🚀'
 
 //? same using JSX
 // JSX is not HTML
-// babel transpile it to react
 // JSX is HTML/XML like syntax extension for JavaScript
 // JSX is not a part of react
 // JSX is not a valid JavaScript
 // js engine can't understand JSX
 // but parcel <. babel run it properly
+// babel transpile it to react
 
 // const jsxHeading = <h1 id="heading">Hello, React! using JSX🚀</h1>;
 const jsxHeading = <h1 className="head">Hello, React! using JSX🚀</h1>
