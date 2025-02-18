@@ -9,10 +9,14 @@ import ReactDOM from 'react-dom/client'
  * Header
  * - Logo
  * - Nav items
+ * - Cart
  * Body
  * - Search
  * - RestaurantContainer
  *    - RestaurantCard 
+ *      - Image
+ *      - Name
+ *      - Rating
  * Footer
  * - CopyRight
  * - Links
@@ -24,4 +28,4 @@ import ReactDOM from 'react-dom/client'
 
 //* rendering react element
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render();
+// root.render();
