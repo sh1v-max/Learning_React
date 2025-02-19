@@ -24,6 +24,18 @@ import ReactDOM from 'react-dom/client'
  * - Contact
  */
 
+const AppLayout = () => {
+  return (
+    <div class = "app">
+      {/* // Header
+      // Body
+      // Footer */}
+      {/* <Header />
+      <Body />
+      <Footer /> */}
+    </div>
+  )
+}
 
 
 //* rendering react element
