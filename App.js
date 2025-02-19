@@ -24,15 +24,29 @@ import ReactDOM from 'react-dom/client'
  * - Contact
  */
 
+
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className='logo' src="https://img.freepik.com/premium-vector/food-logo-design-with-leaf-creative-concept-premium-vector_526458-2675.jpg?semt=ais_hybrid" alt='logo' />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  )
+}
+
 const AppLayout = () => {
   return (
-    <div class = "app">
-      {/* // Header
-      // Body
-      // Footer */}
-      {/* <Header />
-      <Body />
-      <Footer /> */}
+    <div className = "app">
+      <Header />
     </div>
   )
 }
@@ -40,4 +54,4 @@ const AppLayout = () => {
 
 //* rendering react element
 const root = ReactDOM.createRoot(document.getElementById('root'))
-// root.render();
+root.render(<AppLayout/>);
