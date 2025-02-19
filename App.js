@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-
 // lets build our first project
 // food order app using react
 
@@ -13,10 +12,12 @@ import ReactDOM from 'react-dom/client'
  * Body
  * - Search
  * - RestaurantContainer
- *    - RestaurantCard 
+ *    - RestaurantCard
  *      - Image
  *      - Name
  *      - Rating
+ *      - Cuisine
+ *      - Delivery Time
  * Footer
  * - CopyRight
  * - Links
@@ -24,12 +25,20 @@ import ReactDOM from 'react-dom/client'
  * - Contact
  */
 
+// giving style inside js
+// const styleCard = {
+//   backgroundColor: '#f0f0f0',
+// }
 
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className='logo' src="https://img.freepik.com/premium-vector/food-logo-design-with-leaf-creative-concept-premium-vector_526458-2675.jpg?semt=ais_hybrid" alt='logo' />
+        <img
+          className="logo"
+          src="https://img.freepik.com/premium-vector/food-logo-design-with-leaf-creative-concept-premium-vector_526458-2675.jpg?semt=ais_hybrid"
+          alt="logo"
+        />
       </div>
       <div className="nav-items">
         <ul>
@@ -43,15 +52,42 @@ const Header = () => {
   )
 }
 
-const AppLayout = () => {
+const RestaurantCard = () => {
   return (
-    <div className = "app">
-      <Header />
+    // <div className='res-card' style ={styleCard}>
+    // <div className='res-card' style ={{ backgroundColor: "#f0f0f0"}}>
+    <div className="res-card">
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/rvxp5xbniat84r6efku2"
+      />
+      <h3>Meghana Foods</h3>
     </div>
   )
 }
 
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        {/* // RestaurantCard */}
+        <RestaurantCard />
+      </div>
+    </div>
+  )
+}
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  )
+}
 
 //* rendering react element
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<AppLayout/>);
+root.render(<AppLayout />)

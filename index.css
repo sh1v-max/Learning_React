@@ -22,3 +22,19 @@
   padding: 10px;
   margin: 10px;
 }
+
+.res-card{
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  background-color: #f0f0f0;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-logo{
+  padding: 5px;
+  width: 200px;
+}
