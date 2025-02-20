@@ -59,18 +59,34 @@ const Header = () => {
 //? props are just normal argument to the functions
 //& passing a prop to a component is similar to passing an argument to a function
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  console.log(props)
+  //& it will be javascript object
+  //? these props are passed from the component
+  // <RestaurantCard
+  //   resName="Meghana Foods"
+  //   cuisine="Biryani, North Indian"
+  // />
+  // {/* this is passing props to a component*/}
+  // <RestaurantCard
+  //   resName="KFC"
+  //   cuisine="Burger, Fast Food"
+  // />
   return (
     // <div className='res-card' style ={styleCard}>
-    <div className='res-card' style ={{ backgroundColor: "#f0f0f0"}}>
-    {/* // <div className="res-card"> */}
+    <div className="res-card" style={{ backgroundColor: '#f0f0f0' }}>
+      {/* // <div className="res-card"> */}
       <img
         className="res-logo"
         alt="res-logo"
         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/rvxp5xbniat84r6efku2"
       />
-      <h3>Meghana Foods</h3>
+      {/* <h3>Meghana Foods</h3>
       <h4>Biryani, North Indian, Asian </h4>
+      <h4>4.4 Star</h4>
+      <h4>38 minute</h4> */}
+      <h3>{props.resName}</h3>
+      <h4>{props.cuisine} </h4>
       <h4>4.4 Star</h4>
       <h4>38 minute</h4>
     </div>
@@ -83,8 +99,12 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="res-container">
         {/* // RestaurantCard */}
-        <RestaurantCard resName = "Meghana Foods" cuisine = "Biryani, North Indian"/>
-        <RestaurantCard />
+        <RestaurantCard
+          resName="Meghana Foods"
+          cuisine="Biryani, North Indian"
+        />
+        {/* this is passing props to a component*/}
+        <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" />
       </div>
     </div>
   )
