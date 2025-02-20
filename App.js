@@ -52,9 +52,12 @@ const Header = () => {
   )
 }
 
+//================================================================
 // we just hard coded restaurant
 // to make it dynamic, we're gonna use Props
-//? props is an object that holds the data that we pass to the component
+//* props is an object that holds the data that we pass to the component
+//? props are just normal argument to the functions
+//& passing a prop to a component is similar to passing an argument to a function
 
 const RestaurantCard = () => {
   return (
@@ -80,8 +83,7 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="res-container">
         {/* // RestaurantCard */}
-        <RestaurantCard />
-        <RestaurantCard />
+        <RestaurantCard resName = "Meghana Foods" cuisine = "Biryani, North Indian"/>
         <RestaurantCard />
       </div>
     </div>
