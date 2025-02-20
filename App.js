@@ -52,6 +52,10 @@ const Header = () => {
   )
 }
 
+// we just hard coded restaurant
+// to make it dynamic, we're gonna use Props
+//? props is an object that holds the data that we pass to the component
+
 const RestaurantCard = () => {
   return (
     // <div className='res-card' style ={styleCard}>
