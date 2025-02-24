@@ -2108,19 +2108,6 @@ const Body = () => {
 //   )
 // }
 
-const Footer = () => {
-  return <h4>Footer</h4>
-}
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-      <Footer />
-    </div>
-  )
-}
 
 //* rendering react element
 const root = ReactDOM.createRoot(document.getElementById('root'))
