@@ -255,3 +255,4 @@ const App = () => {
 - **`props.children`** allows wrapping content inside a component.  
 
  **Props make React components reusable, dynamic, and flexible!**
+
