@@ -19,3 +19,6 @@ const Header = () => {
     </div>
   )
 }
+
+//? exporting the file
+export default Header;
