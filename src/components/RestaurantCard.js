@@ -1,3 +1,5 @@
+import { CDN_URL } from "../utils/constants";
+
 const RestaurantCard = ({
   // cloudinaryImageId,
   name,
@@ -13,7 +15,7 @@ const RestaurantCard = ({
       <img
         className="res-logo"
         alt="res-logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/rvxp5xbniat84r6efku2"
+        src= {CDN_URL}
       />
       <h2>{name}</h2>
       <h4>{cuisines.join(', ')}</h4>
