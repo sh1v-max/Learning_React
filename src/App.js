@@ -1,65 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// lets build our first project
-// food order app using react
 
-/**
- * Header
- * - Logo
- * - Nav items
- * - Cart
- * Body
- * - Search
- * - RestaurantContainer
- *    - RestaurantCard
- *      - Image
- *      - Name
- *      - Rating
- *      - Cuisine
- *      - Delivery Time
- * Footer
- * - CopyRight
- * - Links
- * - Address
- * - Contact
- */
-
-// giving style inside js
-// const styleCard = {
-//   backgroundColor: '#f0f0f0',
-// }
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://img.freepik.com/premium-vector/food-logo-design-with-leaf-creative-concept-premium-vector_526458-2675.jpg?semt=ais_hybrid"
-          alt="logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-//================================================================
-// we just hard coded restaurant
-// to make it dynamic, we're gonna use Props
-//* props is an object that holds the data that we pass to the component
-//? props are just normal argument to the functions
-//& passing a prop to a component is similar to passing an argument to a function
-
-const restaurantList = [
+const resList = [
   {
     type: 'restaurant',
     data: {
@@ -1877,166 +1820,6 @@ const restaurantList = [
   },
 ]
 
-// const resObj = {
-//   type: 'restaurant',
-//   data: {
-//     type: 'F',
-//     id: '73011',
-//     name: 'KFC',
-//     uuid: '27ff4155-fe46-418e-9862-ab98953bf953',
-//     city: '22',
-//     area: 'Anand Vihar Colony',
-//     totalRatingsString: '5000+ ratings',
-//     cloudinaryImageId: 'bdcd233971b7c81bf77e1fa4471280eb',
-//     cuisines: ['American', 'Snacks', 'Biryani'],
-//     tags: [],
-//     costForTwo: 30000,
-//     costForTwoString: '₹300 FOR TWO',
-//     deliveryTime: 31,
-//     minDeliveryTime: 31,
-//     maxDeliveryTime: 31,
-//     slaString: '31 MINS',
-//     lastMileTravel: 6.199999809265137,
-//     slugs: {
-//       restaurant: 'kfc-chukkuwala-chukkuwala',
-//       city: 'dehradun',
-//     },
-//     cityState: '22',
-//     address:
-//       'KFC Restaurant, Khasra No 1281/1291, Opp Dr Manish Jain hospital, Chakrata road, Dehradun-248001',
-//     locality: 'Clock Tower',
-//     parentId: 547,
-//     unserviceable: false,
-//     veg: false,
-//     select: false,
-//     favorite: false,
-//     tradeCampaignHeaders: [],
-//     aggregatedDiscountInfo: {
-//       header: '50% off',
-//       shortDescriptionList: [
-//         {
-//           meta: '50% off | Use WELCOME50',
-//           discountType: 'Percentage',
-//           operationType: 'RESTAURANT',
-//         },
-//       ],
-//       descriptionList: [
-//         {
-//           meta: '50% off up to ₹100 | Use code WELCOME50',
-//           discountType: 'Percentage',
-//           operationType: 'RESTAURANT',
-//         },
-//       ],
-//       subHeader: '',
-//       headerType: 0,
-//       superFreedel: '',
-//     },
-//     aggregatedDiscountInfoV2: {
-//       header: '50% OFF',
-//       shortDescriptionList: [
-//         {
-//           meta: 'Use WELCOME50',
-//           discountType: 'Percentage',
-//           operationType: 'RESTAURANT',
-//         },
-//       ],
-//       descriptionList: [
-//         {
-//           meta: '50% off up to ₹100 | Use code WELCOME50',
-//           discountType: 'Percentage',
-//           operationType: 'RESTAURANT',
-//         },
-//       ],
-//       subHeader: '',
-//       headerType: 0,
-//       superFreedel: '',
-//     },
-//     ribbon: [
-//       {
-//         type: 'PROMOTED',
-//       },
-//     ],
-//     chain: [],
-//     feeDetails: {
-//       fees: [],
-//       totalFees: 0,
-//       message: '',
-//       title: '',
-//       amount: '',
-//       icon: '',
-//     },
-//     availability: {
-//       opened: true,
-//       nextOpenMessage: '',
-//       nextCloseMessage: '',
-//     },
-//     longDistanceEnabled: 0,
-//     rainMode: 'NONE',
-//     thirdPartyAddress: false,
-//     thirdPartyVendor: '',
-//     adTrackingID: 'cid=5698075~p=1~eid=00000185-8b09-7c92-0e51-a04b00dc0124',
-//     badges: {
-//       imageBased: [],
-//       textBased: [],
-//       textExtendedBadges: [],
-//     },
-//     lastMileTravelString: '6.1 kms',
-//     hasSurge: false,
-//     sla: {
-//       restaurantId: '73011',
-//       deliveryTime: 31,
-//       minDeliveryTime: 31,
-//       maxDeliveryTime: 31,
-//       lastMileTravel: 6.199999809265137,
-//       lastMileDistance: 0,
-//       serviceability: 'SERVICEABLE',
-//       rainMode: 'NONE',
-//       longDistance: 'NOT_LONG_DISTANCE',
-//       preferentialService: false,
-//       iconType: 'EMPTY',
-//     },
-//     promoted: true,
-//     avgRating: '4.0',
-//     totalRatings: 5000,
-//     new: false,
-//   },
-//   subtype: 'basic',
-// }
-
-// const RestaurantCard = (props) => {
-//   console.log(props)
-//   //& it will be javascript object
-//   //? these props are passed from the component
-//   // <RestaurantCard
-//   //   resName="Meghana Foods"
-//   //   cuisine="Biryani, North Indian"
-//   // />
-//   // {/* this is passing props to a component*/}
-//   // <RestaurantCard
-//   //   resName="KFC"
-//   //   cuisine="Burger, Fast Food"
-//   // />
-//   return (
-//     // <div className='res-card' style ={styleCard}>
-//     <div className="res-card" style={{ backgroundColor: '#f0f0f0' }}>
-//       {/* // <div className="res-card"> */}
-//       <img
-//         className="res-logo"
-//         alt="res-logo"
-//         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/rvxp5xbniat84r6efku2"
-//       />
-//       {/* <h3>Meghana Foods</h3>
-//       <h4>Biryani, North Indian, Asian </h4>
-//       <h4>4.4 Star</h4>
-//       <h4>38 minute</h4> */}
-//       <h3>{props.resName}</h3>
-//       <h4>{props.cuisine} </h4>
-//       <h4>4.4 Star</h4>
-//       <h4>38 minute</h4>
-//     </div>
-//   )
-// }
-
 const RestaurantCard = ({
   // cloudinaryImageId,
   name,
@@ -2067,46 +1850,15 @@ const RestaurantCard = ({
   )
 }
 
-// const Body = () => {
-//   return (
-//     <div className="body">
-//       <div className="search">Search</div>
-//       <div className="res-container">
-//         {/* <RestaurantCard resData = {resObj}/>
-//         <RestaurantCard /> */}
-
-//       </div>
-//     </div>
-//   )
-// }
-
-//? using map function to render multiple components
 const Body = () => {
   return (
     <div className="res-container">
-      {restaurantList.map((restaurant) => {
+      {resList.map((restaurant) => {
         return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
       })}
     </div>
   )
 }
-
-// const Body = () => {
-//   return (
-//     <div className="body">
-//       <div className="search">Search</div>
-//       <div className="res-container">
-//         {/* // RestaurantCard */}
-//         <RestaurantCard
-//           resName="Meghana Foods"
-//           cuisine="Biryani, North Indian"
-//         />
-//         {/* this is passing props to a component*/}
-//         <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" />
-//       </div>
-//     </div>
-//   )
-// }
 
 const Footer = () => {
   return <h4>Footer</h4>
@@ -2122,6 +1874,5 @@ const AppLayout = () => {
   )
 }
 
-//* rendering react element
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<AppLayout />)
