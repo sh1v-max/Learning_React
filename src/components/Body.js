@@ -151,6 +151,12 @@ const Body = () => {
   
   //? now using our mock data
   const [listOfRestaurants, setListOfRestaurants] = useState(resList)
+
+  //& useState(resList) returns an array of objects
+  // so we can destructure as shown above, we can also write as
+  // const arr = useState(resList)
+  // const listOfRestaurants = arr[0]
+  // const setListOfRestaurants = arr[1]
   
   return (
     <div className="body">
