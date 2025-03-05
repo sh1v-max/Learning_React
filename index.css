@@ -75,17 +75,19 @@ body {
   color: #ffcc00;
 }
 
-/* ===============res card/search===================== */
+/* ===============search===================== */
 .search {
   padding: 10px;
 }
 
+/* ===============restaurant card===================== */
 .res-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   /* padding: 50px; */
   justify-content: flex-start;
+  /* height: 90%; */
 }
 
 .res-card {
@@ -105,12 +107,51 @@ body {
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
-
-.res-card h3 {
+.res-name {
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.res-cuisine{
+  padding: 5px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.res-location {
+  padding: 5px;
+  font-size: 0.9rem;
+  color: #232323;
+}
+
+.res-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+.res-rating {
+  background-color: #28a745;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.res-rating i {
+  font-size: 0.85rem;
+}
+
+.res-distance,
+.res-price {
+  font-size: 0.85rem;
   color: #333;
-  margin-bottom: 8px;
 }
 
 .res-logo {
