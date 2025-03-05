@@ -26,8 +26,8 @@ const Header = () => {
 
 
 const Footer = () => {
-  return <h4 className='footer'>Footer</h4>
-}
+  return <footer className="footer">© 2025 Your Restaurant Name. All rights reserved.</footer>;
+};
 
 const AppLayout = () => {
   return (
