@@ -22,5 +22,4 @@ const Header = () => {
   )
 }
 
-//? exporting the file
 export default Header;
