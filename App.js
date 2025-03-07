@@ -1858,7 +1858,7 @@ const resData =   {
     costForTwoString: '₹400 FOR TWO',
     deliveryTime: 45,
     minDeliveryTime: 45,
-    maxDeliveryTime: 45,
+    avgRating: 45,
     slaString: '45 MINS',
     lastMileTravel: 0,
     slugs: {
@@ -1975,14 +1975,14 @@ const RestaurantCard = (props) => {
       <div className="res-details">
         <h3 className="res-name">{resData.data.name}</h3>
         <div className="res-info">
-          <span className="res-rating">⭐ 4.0</span>
-          <span className="res-distance">• 3.8 km</span>
-          <span className="res-price">• ₹250 for two</span>
+          <span className="res-rating">⭐ {resData.data.avgRating}</span>
+          <span className="res-distance">• {resData.data.minDeliveryTime} min</span>
+          <span className="res-price">• ₹{resData.data.costForTwo / 100} for two</span>
         </div>
         <h4 className="res-cuisine">
-          Hello
+          {resData.data.cuisines.join(', ')}
         </h4>
-        <h4 className="res-location">Varanasi</h4>
+        <h4 className="res-location">{resData.data.area}</h4>
       </div>
     </div>
   )
