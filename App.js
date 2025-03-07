@@ -1964,7 +1964,7 @@ const resData =   {
 
 const RestaurantCard = (props) => {
   const {resData} = props
-  console.log(resData)
+  console.log(resData) 
   return (
     <div className="res-card">
       <img
