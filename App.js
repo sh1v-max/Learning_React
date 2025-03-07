@@ -23,8 +23,7 @@ const Header = () => {
   )
 }
 
-
-const restaurantList = [
+const resObj = [
   {
     type: 'restaurant',
     data: {
@@ -1842,9 +1841,8 @@ const restaurantList = [
   },
 ]
 
-
-const RestaurantCard = (props) => {
-  const {resName, cuisine} = props
+const RestaurantCard = (resObj) => {
+  const {resName, cuisine} = resObj
   return (
     <div className="res-card">
       <img
@@ -1874,8 +1872,7 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="res-container">
         <RestaurantCard
-          resName="Meghana Foods"
-          cuisine="Biryani, North Indian, Asian"
+        resObj = {resObj}
         />
         <RestaurantCard resName="KFC" cuisine="Fast Food, Beverages" />
       </div>
