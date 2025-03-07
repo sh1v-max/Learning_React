@@ -33,7 +33,7 @@ const RestaurantCard = (props) => {
         alt="res-logo"
       />
       <div className="res-details">
-        <h3 className="res-name">Basant Bahar foods limited</h3>
+        <h3 className="res-name">{props.resName}</h3>
         <div className="res-info">
           <span className="res-rating">⭐ 4.0</span>
           <span className="res-distance">• 3.8 km</span>
