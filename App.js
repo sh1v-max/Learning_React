@@ -23,8 +23,8 @@ const Header = () => {
   )
 }
 
-const RestaurantCard = (props) => {
-  console.log(props)
+const RestaurantCard = ({resName, cuisine}) => {
+  
   return (
     <div className="res-card">
       <img
@@ -33,14 +33,14 @@ const RestaurantCard = (props) => {
         alt="res-logo"
       />
       <div className="res-details">
-        <h3 className="res-name">{props.resName}</h3>
+        <h3 className="res-name">{resName}</h3>
         <div className="res-info">
           <span className="res-rating">⭐ 4.0</span>
           <span className="res-distance">• 3.8 km</span>
           <span className="res-price">• ₹250 for two</span>
         </div>
         <h4 className="res-cuisine">
-          Thalis, Gujarati, Punjabi, Chinese, Biryani
+          {cuisine}
         </h4>
         <h4 className="res-location">Varanasi</h4>
       </div>
