@@ -1969,7 +1969,7 @@ const RestaurantCard = (props) => {
     <div className="res-card">
       <img
         className="res-logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/11/14/33bfb682-d5fa-4054-9e2c-31911e34ebf6_65797.jpg"
+        src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.data.cloudinaryImageId}
         alt="res-logo"
       />
       <div className="res-details">
