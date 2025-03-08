@@ -1,9 +1,10 @@
 import RestaurantCard from './RestaurantCard'
 // import resList from '../utils/mockData'
+import { useState } from 'react'
 
 const Body = () => {
 
-  let listOfRestaurants = [
+  const [listOfRestaurants, setListOfRestaurants] = useState([
     {
       type: 'restaurant',
       data: {
@@ -73,19 +74,18 @@ const Body = () => {
         avgRating: 4.1,
       },
     },
-  ]
-  
+  ])
+
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            // filter logic
-            listOfRestaurants = listOfRestaurants.filter(
+            const filteredList = listOfRestaurants.filter(
               (res) => res.data.avgRating > 4
             )
-            console.log(listOfRestaurants)
+            setListOfRestaurants(filteredList)
           }}
         >
           Top Rated Button
