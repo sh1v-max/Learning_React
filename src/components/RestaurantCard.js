@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
     // minDeliveryTime,
     costForTwo,
     cuisines,
-    // area,
+    area,
     slaString,
     locality,
     id,
@@ -34,7 +34,8 @@ const RestaurantCard = (props) => {
           <span className="res-price">• ₹{costForTwo / 100} for two</span>
         </div>
         <h4 className="res-cuisine">{cuisines.join(', ')}</h4>
-        <h4 className="res-location">{locality}</h4>
+        {/* <h4 className="res-location">{locality}</h4> */}
+        <h4 className="res-location">{area}</h4>
       </div>
     </div>
   )

@@ -1,12 +1,98 @@
-import RestaurantCard from "./RestaurantCard"
-import resList from "../utils/mockData"
+import RestaurantCard from './RestaurantCard'
+// import resList from '../utils/mockData'
 
 const Body = () => {
+
+  let listOfRestaurants = [
+    {
+      type: 'restaurant',
+      data: {
+        type: 'F',
+        id: '81093',
+        name: 'Dominos',
+        uuid: '40b0b55b-e9af-43e7-aeae-be1b012d0b1d',
+        city: '21',
+        area: 'Athwa',
+        totalRatingsString: '500+ ratings',
+        cloudinaryImageId: 'nyp7yrzwc1dc2xqfkydk',
+        cuisines: ['Ice Cream'],
+        tags: [],
+        costForTwo: 25000,
+        costForTwoString: '₹250 FOR TWO',
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 40,
+        slaString: '30-40 MINS',
+        lastMileTravel: 5.599999904632568,
+        avgRating: 4.5,
+      },
+    },
+    {
+      type: 'restaurant',
+      data: {
+        type: 'F',
+        id: '81094',
+        name: 'MCD',
+        uuid: '40b0b55b-e9af-43e7-aeae-be1b012d0b1d',
+        city: '21',
+        area: 'Athwa',
+        totalRatingsString: '500+ ratings',
+        cloudinaryImageId: 'nyp7yrzwc1dc2xqfkydk',
+        cuisines: ['Ice Cream'],
+        tags: [],
+        costForTwo: 25000,
+        costForTwoString: '₹250 FOR TWO',
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 40,
+        slaString: '30-40 MINS',
+        lastMileTravel: 5.599999904632568,
+        avgRating: 3.5,
+      },
+    },
+    {
+      type: 'restaurant',
+      data: {
+        type: 'F',
+        id: '81092',
+        name: 'KFC',
+        uuid: '40b0b55b-e9af-43e7-aeae-be1b012d0b1d',
+        city: '21',
+        area: 'Athwa',
+        totalRatingsString: '500+ ratings',
+        cloudinaryImageId: 'nyp7yrzwc1dc2xqfkydk',
+        cuisines: ['Ice Cream'],
+        tags: [],
+        costForTwo: 25000,
+        costForTwoString: '₹250 FOR TWO',
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 40,
+        slaString: '30-40 MINS',
+        lastMileTravel: 5.599999904632568,
+        avgRating: 4.1,
+      },
+    },
+  ]
+  
   return (
     <div className="body">
-      {/* <div className="search">Search</div> */}
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {
+            // filter logic
+            listOfRestaurants = listOfRestaurants.filter(
+              (res) => res.data.avgRating > 4
+            )
+            console.log(listOfRestaurants)
+          }}
+        >
+          Top Rated Button
+        </button>
+      </div>
       <div className="res-container">
-        {resList.map((restaurant) => (
+        {listOfRestaurants.map((restaurant) => (
           <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
       </div>
