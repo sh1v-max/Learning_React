@@ -23,7 +23,7 @@ const Header = () => {
   )
 }
 
-const resObj = [
+const resList = [
   {
     type: 'restaurant',
     data: {
