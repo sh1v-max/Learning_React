@@ -59,7 +59,7 @@ const Header = () => {
 //? props are just normal argument to the functions
 //& passing a prop to a component is similar to passing an argument to a function
 
-const restaurantList = [
+const resList = [
   {
     type: 'restaurant',
     data: {
@@ -2084,7 +2084,7 @@ const RestaurantCard = ({
 const Body = () => {
   return (
     <div className="res-container">
-      {restaurantList.map((restaurant) => {
+      {resList.map((restaurant) => {
         return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
       })}
     </div>
