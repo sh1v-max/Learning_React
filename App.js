@@ -1994,7 +1994,13 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="res-container">
         <RestaurantCard
-        resData = {resData}
+        resData = {resList[0]}
+        />
+        <RestaurantCard
+        resData = {resList[2]}
+        />
+        <RestaurantCard
+        resData = {resList[1]}
         />
         {/* <RestaurantCard resName="KFC" cuisine="Fast Food, Beverages" /> */}
       </div>
