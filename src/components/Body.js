@@ -91,6 +91,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.data.avgRating > 4
             )
+            setListOfRestaurants(filteredList)
           }}
         >
           Top Rated Button
