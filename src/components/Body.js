@@ -88,6 +88,8 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
+            const filteredList = listOfRestaurants.filter(
+            )
           }}
         >
           Top Rated Button
