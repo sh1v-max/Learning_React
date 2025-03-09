@@ -85,15 +85,7 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter">
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4
-            )
-            setListOfRestaurants(filteredList)
-          }}
-        >
+        <button>
           Top Rated Button
         </button>
       </div>
