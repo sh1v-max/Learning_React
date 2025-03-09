@@ -87,7 +87,8 @@ const Body = () => {
       <div className="filter">
         <button
           className="filter-btn"
-          
+          onClick={() => {
+          }}
         >
           Top Rated Button
         </button>
