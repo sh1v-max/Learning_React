@@ -85,7 +85,10 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter">
-        <button>
+        <button
+          className="filter-btn"
+          
+        >
           Top Rated Button
         </button>
       </div>
