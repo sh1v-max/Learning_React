@@ -76,6 +76,10 @@ const Body = () => {
   //   },
   // ])
 
+  useEffect(() => {
+    console.log('useEffect called')
+  }, [])
+  
   const [listOfRestaurants, setListOfRestaurants] = useState(resList)
   
   return (
