@@ -1,6 +1,6 @@
 import RestaurantCard from './RestaurantCard'
 import resList from '../utils/mockData'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Body = () => {
 
