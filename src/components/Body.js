@@ -3,7 +3,6 @@ import resList from '../utils/mockData'
 import { useState, useEffect } from 'react'
 
 const Body = () => {
-
   // const [listOfRestaurants, setListOfRestaurants] = useState([
   //   {
   //     type: 'restaurant',
@@ -77,11 +76,18 @@ const Body = () => {
   // ])
 
   useEffect(() => {
-    console.log('useEffect called')
+    // console.log('useEffect called')
+    fetchData()
   }, [])
-  
+
+  const fetchData = () => {
+    const data = fetch(
+      'https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING'
+    )
+  }
+
   const [listOfRestaurants, setListOfRestaurants] = useState(resList)
-  
+
   return (
     <div className="body">
       <div className="filter">
