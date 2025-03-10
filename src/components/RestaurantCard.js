@@ -12,11 +12,11 @@ const RestaurantCard = (props) => {
     // minDeliveryTime,
     costForTwo,
     cuisines,
-    area,
-    slaString,
+    areaName,
+    sla,
     locality,
     id,
-  } = resData.data
+  } = resData.info
 
   return (
     <div className="res-card">
@@ -32,12 +32,12 @@ const RestaurantCard = (props) => {
         <h3 className="res-name">{name}</h3>
         <div className="res-info">
           <span className="res-rating">⭐ {avgRating}</span>
-          <span className="res-distance">• {slaString}</span>
-          <span className="res-price">• ₹{costForTwo / 100} for two</span>
+          <span className="res-distance">• {sla.deliveryTime} Min</span>
+          <span className="res-price">• {costForTwo}</span>
         </div>
-        <h4 className="res-cuisine">{cuisines.join(', ')}</h4>
+        <h4 className="res-cuisine">{cuisines.join(", ")}</h4>
         {/* <h4 className="res-location">{locality}</h4> */}
-        <h4 className="res-location">{area}</h4>
+        <h4 className="res-location">{areaName}</h4>
       </div>
     </div>
   )
