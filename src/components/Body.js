@@ -1,5 +1,4 @@
 import RestaurantCard from './RestaurantCard'
-// import resList from '../utils/mockData'
 import { useState, useEffect } from 'react'
 
 const Body = () => {
@@ -15,7 +14,7 @@ const Body = () => {
     )
 
     const json = await data.json()
-    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[1].info)
     setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     
   }
@@ -25,7 +24,7 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter">
-        {/* <button
+        <button
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
@@ -35,7 +34,7 @@ const Body = () => {
           }}
         >
           Top Rated Button
-        </button> */}
+        </button>
       </div>
       <div className="res-container">
         {listOfRestaurants.map((restaurant) => (
