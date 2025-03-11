@@ -1,8 +1,12 @@
 import RestaurantCard from './RestaurantCard'
 import { useState, useEffect } from 'react'
+import Shimmer from './Shimmer'
 
 const Body = () => {
 
+  
+  const [listOfRestaurants, setListOfRestaurants] = useState([])
+  
   useEffect(() => {
     // console.log('useEffect called')
     fetchData()
@@ -14,12 +18,14 @@ const Body = () => {
     )
 
     const json = await data.json()
-    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[1].info)
+    // console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[1].info)
     setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     
   }
 
-  const [listOfRestaurants, setListOfRestaurants] = useState([])
+  if(listOfRestaurants.length === 0) {
+    return <Shimmer />
+  }
 
   return (
     <div className="body">
