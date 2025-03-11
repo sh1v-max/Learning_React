@@ -191,7 +191,24 @@ body {
 
 /* =======================shimmer==================== */
 
+.shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.shimmer-card{
+  width: 250px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-block: 20px;}
 
 /* .shimmer-wrapper {
   display: flex;
@@ -246,14 +263,14 @@ body {
   height: 20px;
 } */
 
-@keyframes shimmerAnimation {
+/* @keyframes shimmerAnimation {
   0% {
     background-position: -200% 0;
   }
   100% {
     background-position: 200% 0;
   }
-}
+} */
 
 /* =======================footer==================== */
 .footer {
