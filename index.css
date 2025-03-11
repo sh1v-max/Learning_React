@@ -190,7 +190,10 @@ body {
 }
 
 /* =======================shimmer==================== */
-.shimmer-wrapper {
+
+
+
+/* .shimmer-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -241,7 +244,7 @@ body {
 .shimmer-text.long {
   width: 100%;
   height: 20px;
-}
+} */
 
 @keyframes shimmerAnimation {
   0% {
