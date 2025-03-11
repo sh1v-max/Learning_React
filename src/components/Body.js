@@ -23,11 +23,17 @@ const Body = () => {
     
   }
 
-  if(listOfRestaurants.length === 0) {
-    return <Shimmer />
-  }
+  //? this is known as conditional rendering
+  // if(listOfRestaurants.length === 0) {
+  //   return <Shimmer />
+  // }
 
-  return (
+  //? can also be written as
+  // return listOfRestaurants.length === 0 ? <Shimmer/> : (
+  //   <div className="body"></div>
+  // )
+
+  return listOfRestaurants.length === 0 ? <Shimmer/> : (
     <div className="body">
       <div className="filter">
         <button
