@@ -15,7 +15,6 @@ const Shimmer = () => {
     </div>
   );
 
-
   //? namaste shimmer
   // return (
   //   <div className="shimmer-container">
