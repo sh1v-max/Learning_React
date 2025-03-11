@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
 
 const Body = () => {
-
   
   const [listOfRestaurants, setListOfRestaurants] = useState([])
   
@@ -56,5 +55,6 @@ const Body = () => {
     </div>
   )
 }
+
 
 export default Body

@@ -191,7 +191,7 @@ body {
 
 /* =======================shimmer==================== */
 
-.shimmer-container{
+/* .shimmer-container{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -208,9 +208,10 @@ body {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  margin-block: 20px;}
+  margin-block: 20px;
+} */
 
-/* .shimmer-wrapper {
+.shimmer-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -261,16 +262,16 @@ body {
 .shimmer-text.long {
   width: 100%;
   height: 20px;
-} */
+}
 
-/* @keyframes shimmerAnimation {
+@keyframes shimmerAnimation {
   0% {
     background-position: -200% 0;
   }
   100% {
     background-position: 200% 0;
   }
-} */
+}
 
 /* =======================footer==================== */
 .footer {
