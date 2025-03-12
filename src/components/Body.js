@@ -37,7 +37,10 @@ const Body = () => {
       <div className="filter">
         <div className="search">
           <input type="text" className='search-btn'/>
-          <button>Search</button>
+          <button onClick={()=>{
+            // filter the restaurant card and update the UI
+            // we'll get the value from input field
+          }}>Search</button>
         </div>
         <button
           className="filter-btn"

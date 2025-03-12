@@ -115,7 +115,12 @@ body {
   color: white;
 }
 
-/* ===============search===================== */
+/* ===============search and filter===================== */
+.filter{
+  display: flex;
+  /* margin-left: 50px; */
+}
+
 .search {
   padding: 10px;
 }
