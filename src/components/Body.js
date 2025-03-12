@@ -3,6 +3,11 @@ import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
 
 const Body = () => {
+  // console.log('body rerendering')
+  //! every time the state variable changes, the component will rerender
+  //! the react triggers reconciliation cycle
+  //~ react does rerender process very fast
+
   const [listOfRestaurants, setListOfRestaurants] = useState([])
 
   const [searchText, setSearchText] = useState('')
@@ -53,6 +58,7 @@ const Body = () => {
             onClick={() => {
               // filter the restaurant card and update the UI
               // we'll get the value from input field
+              console.log(searchText)
             }}
           >
             Search
