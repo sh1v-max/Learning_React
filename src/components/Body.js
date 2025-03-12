@@ -35,6 +35,10 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? <Shimmer/> : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input type="text" className='search-btn'/>
+          <button>Search</button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
