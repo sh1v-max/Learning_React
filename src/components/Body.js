@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
 
 const Body = () => {
-  
   const [listOfRestaurants, setListOfRestaurants] = useState([])
-  
+
+  const [searchText, setSearchText] = useState('')
+
   useEffect(() => {
     // console.log('useEffect called')
     fetchData()
@@ -18,8 +19,9 @@ const Body = () => {
 
     const json = await data.json()
     // console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[1].info)
-    setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    
+    setListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    )
   }
 
   //? this is known as conditional rendering
@@ -32,15 +34,29 @@ const Body = () => {
   //   <div className="body"></div>
   // )
 
-  return listOfRestaurants.length === 0 ? <Shimmer/> : (
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text" className='search-btn'/>
-          <button onClick={()=>{
-            // filter the restaurant card and update the UI
-            // we'll get the value from input field
-          }}>Search</button>
+          <input
+            type="text"
+            className="search-btn"
+            value={searchText}
+            //! this is important, observe the code below
+            onChange={(e) => {
+              setSearchText(e.target.value)
+            }}
+          />
+          <button
+            onClick={() => {
+              // filter the restaurant card and update the UI
+              // we'll get the value from input field
+            }}
+          >
+            Search
+          </button>
         </div>
         <button
           className="filter-btn"
@@ -56,12 +72,11 @@ const Body = () => {
       </div>
       <div className="res-container">
         {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard key = {restaurant.info.id} resData={restaurant} />
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
   )
 }
-
 
 export default Body
