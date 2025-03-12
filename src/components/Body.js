@@ -10,6 +10,8 @@ const Body = () => {
 
   const [listOfRestaurants, setListOfRestaurants] = useState([])
 
+  const [filteredRestaurants, setFilteredRestaurants] = useState([])
+  
   const [searchText, setSearchText] = useState('')
 
   useEffect(() => {
@@ -25,6 +27,9 @@ const Body = () => {
     const json = await data.json()
     // console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[1].info)
     setListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    )
+    setFilteredRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     )
   }
@@ -59,6 +64,14 @@ const Body = () => {
               // filter the restaurant card and update the UI
               // we'll get the value from input field
               console.log(searchText)
+
+              // const filteredRestaurants = listOfRestaurants.filter(
+              //   (res) => res.info.name === searchText
+              // )
+              const filteredRestaurants = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              )
+              setFilteredRestaurants(filteredRestaurants)
             }}
           >
             Search
@@ -77,7 +90,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
