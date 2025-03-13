@@ -1,0 +1,322 @@
+*{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  /* margin: 0; */
+  margin-top: 120px;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+}
+
+/* ====================header============================ */
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background: rgba(225, 225, 225, 0.96);
+  color: #303030;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 90px;
+  z-index: 1000; 
+  /* overflow: hidden; */
+  /* box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); */
+  /* border-radius: 12px; */
+  /* margin: 20px auto; */
+  /* width: 90%; */
+  /* max-width: 1200px; */
+}
+
+.logo {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(197, 197, 197, 0.9);
+}
+
+.logo:hover {
+  /* transform: scale(1.05); */
+  border: 1px solid #ff4d00;
+}
+
+/* =============== Nav bar ============================= */
+.nav-items {   
+  /* list-style-type: none;
+  display: flex;
+  padding: 0 20px;
+  width: auto; */
+  display: flex;
+  align-items: center;
+  list-style: none;
+  /* margin-inline: 20px; */
+  gap: 20px; /* Add spacing between nav items */
+  overflow: visible;
+}
+
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 25px; /* Even spacing between nav links */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-items > ul > li {
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 500;
+  /* transition: color 0.3s ease-in-out, transform 0.2s ease; */
+  padding: 10px 0; /* Adjusted padding for better alignment */
+}
+
+.nav-items > ul > li:hover {
+  color: #ff4d00; /* Highlight effect */
+  /* transform: translateY(-2px); Slight lift effect */
+  /* text-decoration: underline; */
+}
+
+/* Optional: If links are inside <a> tags */
+.nav-items > ul > li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-items > ul > li a:hover {
+  color: #ff4d00;
+}
+
+.login-btn {
+  background-color: #ff6600; /* Bright orange color */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #cc5500;
+  color: white;
+}
+
+/* ===============search and filter===================== */
+.filter{
+  display: flex;
+  /* margin-left: 50px; */
+}
+
+.search {
+  padding: 10px;
+}
+
+/* ===============restaurant card===================== */
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 50px; */
+  /* justify-content: flex-start; */
+  /* height: 90%; */
+}
+
+.res-card {
+  padding: 10px;
+  width: 250px;
+  margin-block: 5px;
+  background: white;
+  border-radius: 10px;
+  /* gap: 10px; */
+  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); */
+  /* box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; */
+  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+  /* text-align: center; */
+}
+
+.res-card:hover {
+  transform: scale(.95);
+  /* box-shadow: 0px 2px 2px rgb(255, 68, 0); */
+  box-shadow: #ff4d0095 0px 0px 0px 2px;
+  cursor: pointer;
+}
+.res-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.res-cuisine{
+  padding: 5px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.res-location {
+  padding: 5px;
+  font-size: 0.9rem;
+  color: #232323;
+}
+
+.res-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+.res-rating {
+  background-color: #28a745;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.res-rating i {
+  font-size: 0.85rem;
+}
+
+.res-distance,
+.res-price {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.res-logo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* .res-logo{
+  width: 100%;
+} */
+
+.filter-btn{
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+/* =======================shimmer==================== */
+
+/* .shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shimmer-card{
+  width: 250px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-block: 20px;
+} */
+
+.shimmer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shimmer-card {
+  width: 250px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-block: 20px;
+}
+
+.shimmer-img {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d4d4d4 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmerAnimation 1.5s infinite linear;
+  border-radius: 10px;
+}
+
+.shimmer-text {
+  margin-top: 10px;
+  height: 15px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d4d4d4 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmerAnimation 1.5s infinite linear;
+  border-radius: 5px;
+}
+
+.shimmer-text.short {
+  width: 60%;
+  height: 12px;
+}
+
+.shimmer-text.medium {
+  width: 80%;
+}
+
+.shimmer-text.long {
+  width: 100%;
+  height: 20px;
+}
+
+@keyframes shimmerAnimation {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* =======================footer==================== */
+.footer {
+  text-align: center;
+  padding: 10px 25px;
+  height: 200px;
+  background: rgba(225, 225, 225);
+  /* box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); */
+  color: #303030;
+  margin-top: 30px;
+  cursor: pointer;
+  /* padding: 100px; */
+  /* margin: 20px auto; */
+  /* width: 90%; */
+  /* max-width: 1200px; */
+  /* border-radius: 8px; */
+}
