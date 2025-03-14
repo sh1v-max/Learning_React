@@ -6,7 +6,7 @@
 
 body {
   /* margin: 0; */
-  margin-top: 120px;
+  margin-top: 100px;
   font-family: "Poppins", sans-serif;
   background-color: #ffffff;
 }
@@ -46,29 +46,29 @@ body {
 }
 
 .logo:hover {
-  /* transform: scale(1.05); */
   border: 1px solid #ff4d00;
+  /* transform: scale(1.05); */
 }
 
 /* =============== Nav bar ============================= */
 .nav-items {   
-  /* list-style-type: none;
-  display: flex;
-  padding: 0 20px;
-  width: auto; */
   display: flex;
   align-items: center;
   list-style: none;
-  /* margin-inline: 20px; */
-  gap: 20px; /* Add spacing between nav items */
+  gap: 20px;
   overflow: visible;
+  /* list-style-type: none;
+  display: flex;
+  padding: 0 20px;
+  width: auto;
+   margin-inline: 20px;  */
 }
 
 .nav-items > ul {
   list-style-type: none;
   display: flex;
-  align-items: center; /* Align items vertically */
-  gap: 25px; /* Even spacing between nav links */
+  align-items: center;
+  gap: 25px;
   padding: 0;
   margin: 0;
 }
@@ -77,17 +77,16 @@ body {
   font-size: 1.1rem;
   cursor: pointer;
   font-weight: 500;
+  padding: 10px 0;
   /* transition: color 0.3s ease-in-out, transform 0.2s ease; */
-  padding: 10px 0; /* Adjusted padding for better alignment */
 }
 
 .nav-items > ul > li:hover {
-  color: #ff4d00; /* Highlight effect */
+  color: #ff4d00;
   /* transform: translateY(-2px); Slight lift effect */
   /* text-decoration: underline; */
 }
 
-/* Optional: If links are inside <a> tags */
 .nav-items > ul > li a {
   text-decoration: none;
   color: inherit;
@@ -99,8 +98,8 @@ body {
 }
 
 .login-btn {
-  background-color: #ff6600; /* Bright orange color */
-  color: white; /* White text */
+  background-color: #ff6600;
+  color: white;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
@@ -118,11 +117,60 @@ body {
 /* ===============search and filter===================== */
 .filter{
   display: flex;
-  /* margin-left: 50px; */
 }
 
 .search {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Align vertically */
+  gap: 10px; /* Space between input and button */
+  margin: 20px auto; /* Add margin for spacing */
+  width: 100%; /* Full width container */
+}
+
+.search input {
   padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 250px; /* Set a fixed width */
+}
+
+.search button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.search-btn::placeholder {
+  color: gray;
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.search button:hover {
+  background-color: #cc5500;
+}
+
+@media (max-width: 768px) {
+  .search {
+    flex-direction: column;
+  }
+
+  .search input {
+    width: 80%;
+  }
+
+  .search button {
+    width: 50%;
+  }
 }
 
 /* ===============restaurant card===================== */
@@ -144,10 +192,10 @@ body {
   margin-block: 5px;
   background: white;
   border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
   /* gap: 10px; */
   /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); */
   /* box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; */
-  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
   /* text-align: center; */
 }
 
@@ -310,10 +358,10 @@ body {
   padding: 10px 25px;
   height: 200px;
   background: rgba(225, 225, 225);
-  /* box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); */
   color: #303030;
   margin-top: 30px;
   cursor: pointer;
+  /* box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); */
   /* padding: 100px; */
   /* margin: 20px auto; */
   /* width: 90%; */
