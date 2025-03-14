@@ -3,11 +3,8 @@ import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
 
 const Body = () => {
-
   const [listOfRestaurants, setListOfRestaurants] = useState([])
-
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
-  
   const [searchText, setSearchText] = useState('')
 
   useEffect(() => {
@@ -37,7 +34,7 @@ const Body = () => {
           <input
             type="text"
             className="search-btn"
-            placeholder='Search for restaurant name...'
+            placeholder="Search for restaurant name..."
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value)

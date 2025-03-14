@@ -1,7 +1,9 @@
+
+
 const Shimmer = () => {
   return (
     <div className="shimmer-wrapper">
-      {Array(10)
+      {Array(8)
         .fill("")
         .map((_, index) => (
     // can also use "unused", rather than '_'
