@@ -121,11 +121,11 @@ body {
 
 .search {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Align vertically */
-  gap: 10px; /* Space between input and button */
-  margin: 20px auto; /* Add margin for spacing */
-  width: 100%; /* Full width container */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  width: 100%;
 }
 
 .search input {
@@ -134,7 +134,7 @@ body {
   border: 2px solid #ccc;
   border-radius: 5px;
   outline: none;
-  width: 250px; /* Set a fixed width */
+  width: 250px;
 }
 
 .search button {
@@ -353,18 +353,66 @@ body {
 }
 
 /* =======================footer==================== */
-.footer {
-  text-align: center;
+/* .footer { */
+  /* text-align: center;
   padding: 10px 25px;
   height: 200px;
   background: rgba(225, 225, 225);
   color: #303030;
   margin-top: 30px;
-  cursor: pointer;
+  cursor: pointer; */
   /* box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); */
   /* padding: 100px; */
   /* margin: 20px auto; */
   /* width: 90%; */
   /* max-width: 1200px; */
   /* border-radius: 8px; */
+/* } */
+
+.footer {
+  background-color: rgba(225, 225, 225);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  color: #303030;
+}
+
+.footer-logo h2 {
+  margin: 0;
+  color: #ff6600;
+}
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-links div {
+  text-align: left;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.footer-links li:hover {
+  text-decoration: underline;
+  color: #ff4d00
 }
