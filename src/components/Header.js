@@ -4,7 +4,7 @@ import { LOGO_URL } from '../utils/constants'
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState('Login')
 
-  console.log("rendered")
+  // console.log("rendered")
   
   //? useEffect
   // if there's no dependency array, useEffect will run on every render
@@ -12,7 +12,7 @@ const Header = () => {
   // if there is dependency array with some values ("[btnNameReact]"), 
   // useEffect will run when those values change, in this case, every time btnNameReact changes
   useEffect(() => {
-    console.log("useEffect called")
+    // console.log("useEffect called")
   }, [btnNameReact]) // empty dependency array
   
   return (
