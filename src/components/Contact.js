@@ -1,10 +1,6 @@
-import Header from "./Header";
-import Footer from "./Footer";
-
 const Contact = () => {
   return (
     <div className="contact-container">
-      <Header />
       <main className="contact-content">
         <h1>Contact Us</h1>
         <p>
@@ -13,7 +9,6 @@ const Contact = () => {
           experience with great food and a cozy atmosphere.
         </p>
       </main>
-      <Footer />
     </div>
   );
 };

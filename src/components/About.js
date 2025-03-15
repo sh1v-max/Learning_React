@@ -1,10 +1,6 @@
-import Header from "./Header";
-import Footer from "./Footer";
-
 const About = () => {
   return (
     <div className="about-container">
-      <Header />
       <main className="about-content">
         <h1>About Us</h1>
         <p>
@@ -13,7 +9,6 @@ const About = () => {
           experience with great food and a cozy atmosphere.
         </p>
       </main>
-      <Footer />
     </div>
   );
 };
