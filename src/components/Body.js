@@ -25,6 +25,15 @@ const Body = () => {
     )
   }
 
+  // i'm doing this to implement searching when we hit enter
+  const handleSearch = () => {
+    console.log(searchText)
+    const filtered = listOfRestaurants.filter((res) =>
+      res.info.name.toLowerCase().includes(searchText.toLowerCase())
+    )
+    setFilteredRestaurants(filtered)
+  }
+
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
@@ -39,8 +48,14 @@ const Body = () => {
             onChange={(e) => {
               setSearchText(e.target.value)
             }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleSearch() 
+                // Trigger search on Enter key press
+              }
+            }}
           />
-          <button
+          {/* <button
             onClick={() => {
               console.log(searchText)
 
@@ -51,7 +66,8 @@ const Body = () => {
             }}
           >
             Search
-          </button>
+          </button> */}
+          <button onClick={handleSearch}>Search</button>
         </div>
       </div>
       <div className="res-container">
