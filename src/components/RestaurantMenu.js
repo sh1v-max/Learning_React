@@ -1,4 +1,5 @@
 import Shimmer from './Shimmer'
+import "./RestaurantMenu.css";
 import { useEffect, useState } from 'react'
 
 const RestaurantMenu = () => {
@@ -30,21 +31,26 @@ const RestaurantMenu = () => {
   return resInfo === null ? (
     <Shimmer />
   ) : (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h4>{avgRating}⭐ ({totalRatingsString})</h4>
-      <h4>{costForTwoMessage}</h4>
-      <h4>Cuisines:- {cuisines.join(", ")}</h4>
-      <h4>Delivery time:- {sla.slaString}</h4>
-      <h4>{}</h4>
-      <h2>Menu</h2>
-      <ul>
-        <li>Biryani</li>
-        <li>Burger</li>
-        <li>Coke</li>
-      </ul>
+    <div className="restaurant-container">
+      <div className="restaurant-header">
+        <h1>{name}</h1>
+        <p className="rating">
+          ⭐ {avgRating} ({totalRatingsString})
+        </p>
+        <p className="cost">{costForTwoMessage}</p>
+        <p className="cuisines">Cuisines: {cuisines.join(", ")}</p>
+        <p className="delivery-time">⏳ {sla.slaString}</p>
+      </div>
+      <div className="menu-section">
+        <h2>Menu</h2>
+        <ul className="menu-list">
+          <li>Biryani</li>
+          <li>Burger</li>
+          <li>Coke</li>
+        </ul>
+      </div>
     </div>
-  )
+  );
 }
 
 export default RestaurantMenu

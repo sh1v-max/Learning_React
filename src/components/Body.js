@@ -1,6 +1,7 @@
 import RestaurantCard from './RestaurantCard'
 import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
+import "./Body.css"
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([])
