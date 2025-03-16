@@ -9,6 +9,7 @@ import Error from './components/Error'
 // to create a route, we need to import createBrowserRouter from react-router-dom
 // version matters, make sure you are using the correct version
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestaurantMenu from './components/RestaurantMenu'
 
 const AppLayout = () => {
   return (
@@ -42,7 +43,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: '/restaurant/:resId',
-        element: <Contact />,
+        element: <RestaurantMenu />,
       },
       // about and contact are the children of the root route, ie appLayout
     ],
