@@ -40,6 +40,10 @@ const appRouter = createBrowserRouter([
         path: '/contact',
         element: <Contact />,
       },
+      {
+        path: '/restaurant/:resId',
+        element: <Contact />,
+      },
       // about and contact are the children of the root route, ie appLayout
     ],
     errorElement: <Error/>,
