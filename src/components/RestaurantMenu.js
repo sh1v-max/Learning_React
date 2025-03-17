@@ -1,9 +1,13 @@
 import Shimmer from './Shimmer'
 import './RestaurantMenu.css'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null)
+
+  const params = useParams()
+  console.log(params)
 
   useEffect(() => {
     fetchData()
@@ -11,10 +15,10 @@ const RestaurantMenu = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=588619&catalog_qa=undefined&submitAction=ENTER'
+      'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=694838&catalog_qa=undefined&submitAction=ENTER'
     )
     const json = await data.json()
-    console.log(json.data?.cards[2]?.card?.card?.info)
+    // console.log(json.data?.cards[2]?.card?.card?.info)
 
     setResInfo(json?.data)
   }
@@ -32,9 +36,9 @@ const RestaurantMenu = () => {
   } = resInfo?.cards[2]?.card?.card?.info
 
   const { itemCards } =
-    resInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
 
-  console.log(itemCards)
+  // console.log(itemCards)
 
   return (
     <div className="restaurant-container">
@@ -50,7 +54,12 @@ const RestaurantMenu = () => {
       <div className="menu-section">
         <h2>Menu</h2>
         <ul className="menu-list">
-          {itemCards.map(item => <li>{item.card.info.name} -  Rs {item.card.info.price/100} ./-</li>)}
+          {itemCards.map((item) => (
+            <li key = {item.card.info.id}>
+              {item.card.info.name}  - Rs 
+              {item.card.info.price / 100} ./-
+            </li>
+          ))}
         </ul>
       </div>
     </div>
