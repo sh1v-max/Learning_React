@@ -35,6 +35,7 @@ const RestaurantCard = (props) => {
           <span className="res-price">• {costForTwo}</span>
         </div>
         <h4 className="res-cuisine">{cuisines.join(", ")}</h4>
+        {/* <h4 className="res-location">{locality}</h4> */}
         <h4 className="res-location">{areaName}</h4>
       </div>
     </div>

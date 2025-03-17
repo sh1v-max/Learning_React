@@ -4,6 +4,13 @@
   overflow-x: hidden;
 }
 
+body {
+  /* margin: 0; */
+  margin-top: 100px;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+}
+
 /* ====================header============================ */
 .header {
   box-sizing: border-box;
@@ -107,13 +114,6 @@
   color: white;
 }
 
-/* =======================body======================= */
-body {
-  margin-top: 100px;
-  font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
-}
-
 
 /* =======================footer==================== */
 /* .footer { */
@@ -179,3 +179,5 @@ body {
   text-decoration: underline;
   color: #ff4d00
 }
+
+/* =======================about==================== */
