@@ -4,28 +4,42 @@
   overflow-x: hidden;
 }
 
+html, body {
+  height: 100%; /* Ensure full height */
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin-top: 90px;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #FFF8F1;
+  flex: 1;
+}
+
+#root {
+  flex: 1; /* Makes sure the main content fills available space */
+  display: flex;
+  flex-direction: column;
+}
+
 /* ====================header============================ */
 .header {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
   padding: 10px 10px;
   background: rgba(225, 225, 225, 0.96);
   color: #303030;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   max-width: 100vw;
   height: 90px;
   z-index: 1000; 
-  /* overflow: hidden; */
-  /* box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); */
-  /* border-radius: 12px; */
-  /* margin: 20px auto; */
-  /* width: 90%; */
-  /* max-width: 1200px; */
 }
 
 .logo {
@@ -40,7 +54,6 @@
 
 .logo:hover {
   border: 1px solid #ff4d00;
-  /* transform: scale(1.05); */
 }
 
 /* =============== Nav bar ============================= */
@@ -50,11 +63,6 @@
   list-style: none;
   gap: 20px;
   overflow: visible;
-  /* list-style-type: none;
-  display: flex;
-  padding: 0 20px;
-  width: auto;
-   margin-inline: 20px;  */
 }
 
 .nav-items > ul {
@@ -71,13 +79,10 @@
   cursor: pointer;
   font-weight: 500;
   padding: 10px 0;
-  /* transition: color 0.3s ease-in-out, transform 0.2s ease; */
 }
 
 .nav-items > ul > li:hover {
   color: #ff4d00;
-  /* transform: translateY(-2px); Slight lift effect */
-  /* text-decoration: underline; */
 }
 
 .nav-items > ul > li a {
@@ -107,35 +112,14 @@
   color: white;
 }
 
-/* =======================body======================= */
-body {
-  margin-top: 90px;
-  font-family: "Poppins", sans-serif;
-  background-color: #FFF8F1;
-}
-
 
 /* =======================footer==================== */
-/* .footer { */
-  /* text-align: center;
-  padding: 10px 25px;
-  height: 200px;
-  background: rgba(225, 225, 225);
-  color: #303030;
-  margin-top: 30px;
-  cursor: pointer; */
-  /* box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); */
-  /* padding: 100px; */
-  /* margin: 20px auto; */
-  /* width: 90%; */
-  /* max-width: 1200px; */
-  /* border-radius: 8px; */
-/* } */
 
 .footer {
   background-color: rgba(225, 225, 225);
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
+  margin-top: auto;
 }
 
 .footer-container {
@@ -143,7 +127,7 @@ body {
   justify-content: space-between;
   max-width: 1000px;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
   color: #303030;
 }
 
