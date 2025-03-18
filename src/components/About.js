@@ -1,18 +1,24 @@
-import "./About.css";
+import './About.css'
 
 const About = () => {
   return (
     <div className="about-container">
-      <main className="about-content">
-        <h1>About Us</h1>
-        <p>
-          Welcome to our restaurant, where we serve delicious meals made with 
-          love and fresh ingredients. Our mission is to provide a unique dining 
-          experience with great food and a cozy atmosphere.
-        </p>
-      </main>
+      <div className="about-left">
+        <h1>
+          Welcome to Bite<span>Swift</span><br /> The world of <br /> <span className='tag'>Tasty & Fresh Food</span>
+        </h1>
+        <h4>
+          "Better you will feel if you eat a Bite<span>Swift</span> healthy meal"
+        </h4>
+      </div>
+      <div className="about-right">
+        <img className='image'
+          src="https://foodfire-chapter07.netlify.app/burger-image.ec55d069.png"
+          alt="Food Image"
+        />
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About
