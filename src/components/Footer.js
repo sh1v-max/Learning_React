@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-          <h2>MyBrand</h2>
-          <p>© 2025 MyBrand Inc.</p>
+          <h2>BiteSwift</h2>
+          <p>© 2025 BiteSwift Inc.</p>
         </div>
         <div className="footer-links">
           <div>
