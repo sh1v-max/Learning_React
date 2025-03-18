@@ -20,7 +20,7 @@ const RestaurantCard = (props) => {
   return (
     <div className="res-card">
       <img
-        className="res-logo"
+        className="res-img"
         src={
           CDN_URL +
           cloudinaryImageId

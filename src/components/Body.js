@@ -59,6 +59,9 @@ const Body = () => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
+      <div className="title-container">
+        <p className="title">Recommended top restaurant chains</p>
+      </div>
       <div className="res-container">
         {filteredRestaurants.map((restaurant) => (
           <Link

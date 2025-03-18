@@ -1,10 +1,12 @@
 /* =======================restaurantMenu================= */
 .restaurant-container {
+  border: #ff6600 2px solid;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
 }
+
 
 .restaurant-header {
   background: #fff;
