@@ -4,8 +4,13 @@
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 html, body {
-  height: 100%; /* Ensure full height */
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -18,11 +23,11 @@ body {
   flex: 1;
 }
 
-#root {
-  flex: 1; /* Makes sure the main content fills available space */
+/* #root {
+  flex: 1;
   display: flex;
   flex-direction: column;
-}
+} */
 
 /* ====================header============================ */
 .header {

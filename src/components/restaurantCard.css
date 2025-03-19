@@ -6,6 +6,7 @@
   justify-content: center;
   gap: 10px;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .res-container a {
@@ -47,7 +48,6 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 4px;
-  /* border: 1px solid #707070; */
   margin: 0 auto;
 }
 
