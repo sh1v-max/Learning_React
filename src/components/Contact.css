@@ -1,7 +1,7 @@
 .contact-container {
   max-width: 800px;
   /* min-height: 100vh; */
-  margin: 50px auto;
+  margin: 43px auto;
   padding: 10px;
   background-color: #fff8f1;
   border-radius: 10px;
@@ -74,13 +74,44 @@ p {
   background-color: #e04e2a;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
   .contact-info {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
   }
 
   .contact-card {
-    width: 100%;
+    width: 90%;
+  }
+
+  .contact-form {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-container {
+    padding: 15px;
+  }
+
+  .contact-card h2 {
+    font-size: 1rem; /* Smaller heading */
+  }
+
+  .contact-card p {
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
   }
 }

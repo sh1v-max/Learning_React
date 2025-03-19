@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 20px 40px 40px ;
+  padding: 40px 20px 40px 80px ;
   background-color: #fff8f1;
   color: #333;
   font-family: 'Poppins', sans-serif;
@@ -83,17 +83,54 @@
   animation: float 3s ease-in-out infinite;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
   .about-container {
     flex-direction: column;
     text-align: center;
+    padding: 30px 15px;
   }
 
-  .about-detail, .about-img {
+  .about-detail {
     width: 100%;
   }
 
   .about-img {
+    width: 100%;
     margin-top: 20px;
+  }
+
+  .about-img .image {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .about-detail h1 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .about-detail .tag {
+    font-size: 2.2rem; /* Adjusted for mobile */
+  }
+
+  .about-detail h4 {
+    font-size: 1rem;
+  }
+
+  .about-detail p, 
+  .about-detail ul li {
+    font-size: 0.9rem;
+  }
+
+  .about-detail h3 {
+    font-size: 1rem;
+  }
+
+  .about-img .image {
+    max-width: 250px;
   }
 }

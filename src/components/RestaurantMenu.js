@@ -6,7 +6,6 @@ import { MENU_API} from '../utils/constants'
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null)
-
   const {resId} = useParams()
   console.log(resId)
 
