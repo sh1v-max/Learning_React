@@ -2,7 +2,8 @@ import "./shimmer.css";
 
 const Shimmer = () => {
   return (
-    <div className="shimmer-wrapper">
+    <div>
+      <div className="shimmer-wrapper">
       {Array(8)
         .fill("")
         .map((_, index) => (
@@ -14,6 +15,7 @@ const Shimmer = () => {
             <div className="shimmer-text short"></div>
           </div>
         ))}
+    </div>
     </div>
   );
 

@@ -38,9 +38,7 @@ const Body = () => {
     setFilteredRestaurants(filtered)
   }
 
-  return listOfRestaurants.length === 0 ? (
-    <Shimmer />
-  ) : (
+  return (
     <div className="body">
       <div className="search">
         <input
@@ -48,9 +46,7 @@ const Body = () => {
           className="search-btn"
           placeholder="Search for restaurant name..."
           value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value)
-          }}
+          onChange={(e) => setSearchText(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               handleSearch()
@@ -59,19 +55,26 @@ const Body = () => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      <div className="title-container">
-        <p className="title">Recommended top restaurant chains</p>
-      </div>
-      <div className="res-container">
-        {filteredRestaurants.map((restaurant) => (
-          <Link
-            key={restaurant.info.id}
-            to={'/restaurant/' + restaurant.info.id}
-          >
-            <RestaurantCard resData={restaurant} />
-          </Link>
-        ))}
-      </div>
+
+      {filteredRestaurants.length === 0 ? (
+        <Shimmer />
+      ) : (
+        <div>
+          <div className="title-container">
+            <p className="title">Recommended top restaurant chains</p>
+          </div>
+          <div className="res-container">
+            {filteredRestaurants.map((restaurant) => (
+              <Link
+                key={restaurant.info.id}
+                to={'/restaurant/' + restaurant.info.id}
+              >
+                <RestaurantCard resData={restaurant} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
