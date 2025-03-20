@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import './Body.css'
 
 const Body = () => {
+  console.log(useState())
   const [listOfRestaurants, setListOfRestaurants] = useState([])
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState('')
