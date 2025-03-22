@@ -2,6 +2,7 @@
 import { ABOUT_IMG } from '../utils/constants'
 import User from './User'
 import UserClass from './UserClass'
+import AboutClass from './AboutClass'
 
 const About = () => {
   return (
@@ -46,6 +47,7 @@ const About = () => {
       <h2>This is namaste React</h2>
       {/* <User name = {"Wazir (fun)"}/> */}
       <UserClass name = {"Wazir (class)"}  location = {"Varanasi"}/>
+      <AboutClass />
     </div>
   )
 }
