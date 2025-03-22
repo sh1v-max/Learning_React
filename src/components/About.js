@@ -1,4 +1,4 @@
-import './About.css';
+// import './About.css';
 import { ABOUT_IMG } from '../utils/constants';
 
 const About = () => {
