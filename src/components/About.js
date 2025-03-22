@@ -44,7 +44,7 @@ const About = () => {
     <div>
       <h1>About page: </h1>
       <h2>This is namaste React</h2>
-      <User name = {"Wazir (fun)"}/>
+      {/* <User name = {"Wazir (fun)"}/> */}
       <UserClass name = {"Wazir (class)"}  location = {"Varanasi"}/>
     </div>
   )
