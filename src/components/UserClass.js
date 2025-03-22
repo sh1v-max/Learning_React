@@ -9,13 +9,20 @@ class UserClass extends React.Component {
   //& to receive the prop, we need constructor
   constructor(props) {
     super(props)
+
+    this.state = {
+      count: 0
+    }
   }
   
   render() {
+    const { name, location } = this.props
+    
     return (
       <div className="user-card">
-        <h2>Name: {this.props.name}</h2>
-        <h3>Location: varanasi</h3>
+        <h1>Count = {this.state.count}</h1>
+        <h2>Name: {name}</h2>
+        <h3>Location: {location}</h3>
         <h4>Contact: wazir@gmail.com</h4>
       </div>
     )
