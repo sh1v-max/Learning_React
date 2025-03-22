@@ -14,11 +14,17 @@ class UserClass extends React.Component {
       count: 0,
       count2: 10, // we can have multiple states
     }
+    console.log('child constructor')
   }
+
+  componentDidMount() {
+    console.log('child componentDidMount')
+  }  
 
   render() {
     const { name, location } = this.props
     const { count, count2 } = this.state
+    console.log('child render')
 
     return (
       <div className="user-card">
@@ -41,5 +47,7 @@ class UserClass extends React.Component {
     )
   }
 }
+
+//! first constructor, then render and then componentDidMount will be called 
 
 export default UserClass
