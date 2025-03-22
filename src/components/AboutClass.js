@@ -1,5 +1,5 @@
 import User from './User'
-import UserClass from './UserClass'
+import UserClass2 from './UserClass2'
 import React from 'react'
 import '../css/User.css'
 
@@ -7,21 +7,20 @@ class AboutClass extends React.Component {
   constructor(props) {
     super(props)
 
-    console.log('parent constructor')
+    // console.log('parent constructor')
   }
 
   componentDidMount() {
-    console.log('parent componentDidMount')
+    // console.log('parent componentDidMount')
   }  
   
   render() {
-    console.log('parent render')
+    // console.log('parent render')
 
     return (
       <div className="about-class">
         <h1>About component</h1>
-        <UserClass name={'Wazir(class)'} location={'Varanasi'} />
-        <UserClass name={'Elon Musk'} location={'US'} />
+        <UserClass2 name={'first'} location={'Varanasi'} />
       </div>
     )
   }
