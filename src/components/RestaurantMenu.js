@@ -1,5 +1,5 @@
 import Shimmer from './Shimmer'
-import './RestaurantMenu.css'
+import '../css/RestaurantMenu.css'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { MENU_API} from '../utils/constants'

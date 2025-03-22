@@ -1,5 +1,5 @@
 import React from 'react'
-import './User.css'
+import '../css/User.css'
 
 //? class base component is a class which has a render method
 //? that returns a piece of JSX

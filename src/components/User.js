@@ -1,4 +1,4 @@
-import './User.css'
+import '../css/User.css'
 
 //? function component is a function that returns a piece of JSX
 const User = ({name}) => {
