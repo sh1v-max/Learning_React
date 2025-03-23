@@ -1,4 +1,4 @@
-# **Class-Based Components in React (Detailed Guide with Props & Conversion)**  
+# **Class-Based Components**  
 
 Before **React Hooks** (`useState`, `useEffect`, etc.), **class-based components** were widely used for managing **state** and **lifecycle methods**. While functional components are now preferred, understanding class components is crucial for maintaining older React projects.  
 
