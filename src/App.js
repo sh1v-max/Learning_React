@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import Header from './components/Header'
 import Body from './components/Body'
@@ -6,8 +6,13 @@ import Footer from './components/Footer'
 import About from './components/About'
 import Contact from './components/Contact'
 import Error from './components/Error'
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import RestaurantMenu from './components/RestaurantMenu'
+// import Grocery from './components/Grocery'
+// now we don't need this
+
+const Grocery = lazy(() => import('./components/Grocery'))
+// it's not same import as above, it's dynamic import... a function
 
 const AppLayout = () => {
   return (
@@ -23,7 +28,7 @@ const appRouter = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    children :[
+    children: [
       {
         path: '/',
         element: <Body />,
@@ -40,10 +45,22 @@ const appRouter = createBrowserRouter([
         path: '/restaurant/:resId',
         element: <RestaurantMenu />,
       },
+      {
+        path: '/grocery',
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            {' '}
+            <Grocery />
+          </Suspense>
+        ),
+      },
     ],
-    errorElement: <Error/>,
+    errorElement: <Error />,
   },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<RouterProvider router={appRouter} />)
+
+// lazy loading is a technique in which we load only the required part of the application and not the entire application at once
+// we can use lazy loading with react-router-dom by using dynamic import
