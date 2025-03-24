@@ -17,7 +17,6 @@ class UserClass2 extends React.Component {
 
   //& this is how we can make API call in class component
   async componentDidMount() {
-
     const data = await fetch ('https://api.github.com/users/sh1v-max') 
     const json = await data.json()
 
@@ -25,8 +24,6 @@ class UserClass2 extends React.Component {
       userInfo: json
     })
     console.log(this.state.userInfo)
-    
-    console.log(json)
   }
 
   render() {
