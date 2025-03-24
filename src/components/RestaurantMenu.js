@@ -3,20 +3,27 @@ import '../css/RestaurantMenu.css'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { MENU_API} from '../utils/constants'
+import useRestaurantMenu from '../utils/useRestaurantMenu'
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null)
+  //^ we don't need this anymore
+  // const [resInfo, setResInfo] = useState(null)
   const {resId} = useParams()
 
-  useEffect(() => {
-    fetchData()
-  }, [])
+  //& using out custom hook useRestaurantMenu.js
+  const resInfo = useRestaurantMenu(resId)
 
-  const fetchData = async () => {
-    const data = await fetch(MENU_API + resId)
-    const json = await data.json()
-    setResInfo(json?.data)
-  }
+  //& as resInfo was used for fetching and getting data... 
+  //& so we can remove the below code and use the useRestaurantMenu.js file which is a custom hook
+  // useEffect(() => {
+  //   fetchData()
+  // }, [])
+
+  // const fetchData = async () => {
+  //   const data = await fetch(MENU_API + resId)
+  //   const json = await data.json()
+  //   setResInfo(json?.data)
+  // }
 
   if (resInfo === null) return <Shimmer />
 
@@ -60,3 +67,5 @@ const RestaurantMenu = () => {
 }
 
 export default RestaurantMenu
+
+// ! after creating custom hook, out code looks more clean (without comments obv)
