@@ -1,24 +1,19 @@
 import Shimmer from './Shimmer'
-import '../css/RestaurantMenu.css'
-import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { MENU_API} from '../utils/constants'
 import useRestaurantMenu from '../utils/useRestaurantMenu'
+import '../css/RestaurantMenu.css'
 
 const RestaurantMenu = () => {
+  const { resId } = useParams()
+
   //^ we don't need this anymore
   // const [resInfo, setResInfo] = useState(null)
-  const {resId} = useParams()
 
-  //& using out custom hook useRestaurantMenu.js
   const resInfo = useRestaurantMenu(resId)
 
-  //& as resInfo was used for fetching and getting data... 
-  //& so we can remove the below code and use the useRestaurantMenu.js file which is a custom hook
   // useEffect(() => {
   //   fetchData()
   // }, [])
-
   // const fetchData = async () => {
   //   const data = await fetch(MENU_API + resId)
   //   const json = await data.json()
@@ -55,8 +50,8 @@ const RestaurantMenu = () => {
         <h2>Menu</h2>
         <ul className="menu-list">
           {itemCards.map((item) => (
-            <li key = {item.card.info.id}>
-              {item.card.info.name}  - Rs 
+            <li key={item.card.info.id}>
+              {item.card.info.name} - Rs
               {item.card.info.price / 100} ./-
             </li>
           ))}
@@ -68,4 +63,13 @@ const RestaurantMenu = () => {
 
 export default RestaurantMenu
 
-// ! after creating custom hook, out code looks more clean (without comments obv)
+//& as resInfo was used for fetching and getting data...
+//& we can create a custom hook useRestaurantMenu.js and use it in this component (see commented code)
+//& and later on, we can use out custom hook here and other components as well (if needed)
+// using hook here 👇
+// const resInfo = useRestaurantMenu(resId)
+//? why creating custom hook is better?
+// because it makes our code more clean and readable
+// we can reuse it in other components as well
+// in case, there is some issue with let's say fetching data, or any custom hook... 
+// we just need to check that file, it wont affect other components
