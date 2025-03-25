@@ -1,4 +1,4 @@
-### **🔹 What are Linters?**  
+# **🔹 What are Linters?**  
 A **linter** is a tool that **automatically analyzes your code** for potential errors, style inconsistencies, and best practices. It helps maintain **clean, readable, and bug-free code** by catching issues before runtime.  
 
 ---

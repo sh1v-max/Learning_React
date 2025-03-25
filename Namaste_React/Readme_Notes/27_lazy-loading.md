@@ -1,11 +1,11 @@
-## **🔹 What is Lazy Loading?**  
-**Lazy Loading** is an optimization technique that **delays the loading of resources** (like images, components, or data) until they are actually needed.  
+# **🔹 What is Lazy Loading?**  
+Lazy loading, also known as **code splitting, chunking, dynamic bundling, or on-demand loading**, is an optimization technique that **delays the loading of resources** (like images, components, or data) until they are actually needed.  
 
 👉 Instead of **loading everything upfront**, only the **necessary parts** of the application are loaded initially, improving **performance and load times**.  
 
 ---
 
-## ✅ **Why Use Lazy Loading?**  
+### ✅ **Why Use Lazy Loading?**  
 ✔ **Faster Initial Load** – Loads only essential parts first.  
 ✔ **Saves Bandwidth** – Reduces unnecessary network requests.  
 ✔ **Improves Performance** – Reduces memory usage and speeds up rendering.  
@@ -13,7 +13,7 @@
 
 ---
 
-## **🔹 Lazy Loading Components in React**  
+### **🔹 Lazy Loading Components in React**  
 In React, we use `React.lazy()` to dynamically load components only when they are required.  
 
 ### 📌 **Example: Without Lazy Loading (Regular Import)**
@@ -63,7 +63,7 @@ export default App;
 
 ---
 
-## **🔹 Lazy Loading Routes in React (React Router)**  
+### **🔹 Lazy Loading Routes in React (React Router)**  
 📌 **Example: Lazy Load Pages in React Router**
 ```javascript
 import { lazy, Suspense } from "react";
@@ -93,7 +93,7 @@ export default App;
 
 ---
 
-## **🔹 Lazy Loading Images (for Better Performance)**  
+### **🔹 Lazy Loading Images (for Better Performance)**  
 📌 **Example: Lazy Loading Images with `loading="lazy"`**
 ```html
 <img src="large-image.jpg" alt="Lazy Image" loading="lazy" />
@@ -112,4 +112,4 @@ export default App;
 | High memory & bandwidth usage | Optimized resource usage |
 | Not scalable for large apps | Works great for large applications |
 
-💡 **Lazy loading improves performance, reduces initial load time, and optimizes resource usage!** 🚀🔥
+💡 **Lazy loading (code splitting, chunking, dynamic bundling) improves performance, reduces initial load time, and optimizes resource usage!** 🚀🔥
