@@ -11,7 +11,7 @@ const Header = () => {
   useEffect(() => {}, [btnNameReact]);
 
   return (
-    <div className="header">
+    <div className="flex">
       <div className="logo-container">
         <Link to="/">
           <img className="logo" src={LOGO_URL} alt="logo" />
