@@ -10,22 +10,71 @@ const Header = () => {
 
   useEffect(() => {}, [btnNameReact]);
 
+  // return (
+  //   <div className="header">
+  //     <div className="logo-container">
+  //       <Link to="/">
+  //         <img className="logo" src={LOGO_URL} alt="logo" />
+  //       </Link>
+  //     </div>
+
+  //     {/* Hamburger Menu Icon */}
+  //     <button className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+  //       ☰
+  //     </button>
+
+  //     {/* Navigation Items */}
+  //     <div className={`nav-items ${isMenuOpen ? "open" : ""}`}>
+  //       <ul>
+  //         <li>
+  //           {onlineStatus ? "🟢" : "🔴"}
+  //         </li>
+  //         <li>
+  //           <Link to="/">Home</Link>
+  //         </li>
+  //         <li>
+  //           <Link to="/grocery">Grocery</Link>
+  //         </li>
+  //         <li>
+  //           <Link to="/about">About</Link>
+  //         </li>
+  //         <li>
+  //           <Link to="/contact">Contact Us</Link>
+  //         </li>
+  //         <li>
+  //           <Link to="/">Cart</Link>
+  //         </li>
+  //         <button
+  //           className="login-btn"
+  //           onClick={() =>
+  //             setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login")
+  //           }
+  //         >
+  //           {btnNameReact}
+  //         </button>
+  //       </ul>
+  //     </div>
+  //   </div>
+  // );
+
+  // with tailwindcss
+  
   return (
     <div className="flex">
-      <div className="logo-container">
+      <div className="w-22">
         <Link to="/">
           <img className="logo" src={LOGO_URL} alt="logo" />
         </Link>
       </div>
 
       {/* Hamburger Menu Icon */}
-      <button className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      {/* <button className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         ☰
-      </button>
+      </button> */}
 
       {/* Navigation Items */}
       <div className={`nav-items ${isMenuOpen ? "open" : ""}`}>
-        <ul>
+        <ul className="flex justify-between">
           <li>
             {onlineStatus ? "🟢" : "🔴"}
           </li>
