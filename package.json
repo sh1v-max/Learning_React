@@ -2,7 +2,6 @@
   "name": "learning_react",
   "version": "1.0.0",
   "description": "namaste react by Akshay Saini",
-  "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -18,8 +17,12 @@
   "author": "wazir",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.17",
+    "autoprefixer": "^10.4.21",
     "parcel": "^2.13.3",
-    "process": "^0.11.10"
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^4.0.16"
   },
   "dependencies": {
     "react": "^19.0.0",

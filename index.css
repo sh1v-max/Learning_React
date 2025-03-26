@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
   margin: 0;
   padding: 0;
@@ -231,3 +233,5 @@ body {
   text-decoration: underline;
   color: #ff4d00;
 }
+
+/* =============About page======================== */
