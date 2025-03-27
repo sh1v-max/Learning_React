@@ -60,7 +60,7 @@ const Header = () => {
   // with tailwindcss
   
   return (
-    <div className="flex">
+    <div className="flex justify-between items-center fixed top-0 left-0 w-full p-3 bg-gray-200 bg-opacity-95 shadow-md z-50">
       <div className="w-22">
         <Link to="/">
           <img className="logo" src={LOGO_URL} alt="logo" />
