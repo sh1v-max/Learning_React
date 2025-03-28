@@ -78,7 +78,7 @@ const Header = () => {
 
       {/* Navigation Items */}
       <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
-        <ul className="flex justify-between">
+        <ul className="flex gap-5 text-lg font-medium">
           <li>{onlineStatus ? '🟢' : '🔴'}</li>
           <li>
             <Link to="/">Home</Link>
