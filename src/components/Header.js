@@ -80,19 +80,19 @@ const Header = () => {
       <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
         <ul className="flex gap-5 text-lg font-medium">
           <li>{onlineStatus ? '🟢' : '🔴'}</li>
-          <li>
+          <li className="hover:text-orange-500">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="hover:text-orange-500">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>
+          <li className="hover:text-orange-500">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="hover:text-orange-500">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="hover:text-orange-500">
             <Link to="/">Cart</Link>
           </li>
           <button
