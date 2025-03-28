@@ -70,13 +70,12 @@ const Header = () => {
           />
         </Link>
       </div>
-
-      {/* Hamburger Menu Icon */}
-      {/* <button className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      {/* Hamburger Menu Icon (For Mobile) */}
+      {/* <button className="md:hidden text-2xl cursor-pointer fixed right-4 top-6" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         ☰
       </button> */}
 
-      {/* Navigation Items */}
+      {/* Navigation Menu */}
       <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
         <ul className="flex gap-5 text-lg font-medium">
           <li>{onlineStatus ? '🟢' : '🔴'}</li>
