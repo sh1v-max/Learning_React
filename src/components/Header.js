@@ -96,7 +96,7 @@ const Header = () => {
             <Link to="/">Cart</Link>
           </li>
           <button
-            className="login-btn"
+            className="bg-orange-500 text-white font-bold p-1 px-4 py-2 rounded-md transition duration-300 hover:bg-orange-600 active:scale-95"
             onClick={() =>
               setBtnNameReact(btnNameReact === 'Login' ? 'Logout' : 'Login')
             }
