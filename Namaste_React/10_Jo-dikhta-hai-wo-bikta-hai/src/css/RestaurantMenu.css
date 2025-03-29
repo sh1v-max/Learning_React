@@ -1,0 +1,49 @@
+/* =======================restaurantMenu================= */
+.restaurant-container {
+  border: #ff6600 2px solid;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.restaurant-header {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.restaurant-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.cost,
+.cuisines,
+.delivery-time {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #666;
+}
+
+.menu-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-align: center;
+}
