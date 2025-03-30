@@ -14,12 +14,14 @@ const RestaurantMenu = () => {
   const {
     cloudinaryImageId,
     name,
-    avgRating,
     areaName,
+    avgRating,
+    avgRatingString,
+    totalRatingsString,
     costForTwoMessage,
     cuisines,
+    locality,
     sla,
-    totalRatingsString,
   } = resInfo?.cards[2]?.card?.card?.info || {}
 
   const { itemCards } =
@@ -28,18 +30,24 @@ const RestaurantMenu = () => {
   return (
     <div className="restaurant-container">
       <div className="restaurant-header">
-        <img src={IMG_CDN_URL + cloudinaryImageId} alt={name} />
-        <div>
+        <div className='res-image'>
+          <img src={IMG_CDN_URL + cloudinaryImageId} alt={name} />
+        </div>
+        <div className="res-header-details">
           <h1>{name}</h1>
-          <p className="rating">
-            ⭐ {avgRating} ({totalRatingsString})
-          </p>
-          <p className="cost">{costForTwoMessage}</p>
+          {/* <h3>{locality}</h3> */}
+          <h3>{areaName}</h3>
           <p className="cuisines">Cuisines: {cuisines.join(', ')}</p>
-          <p className="delivery-time">⏳ {sla.slaString}</p>
+          <div className="info">
+            <p className="star">⭐{avgRating}</p>
+            <p>({totalRatingsString}) &nbsp;||</p>
+            <p className="cost">{costForTwoMessage} &nbsp;||</p>
+            <p className="delivery-time">⏳ {sla.slaString}</p>
+          </div>
         </div>
       </div>
-      <div className="menu-section">
+
+      {/* <div className="menu-section">
         <h2>Menu</h2>
         <ul className="menu-list">
           {itemCards.map((item) => (
@@ -49,7 +57,7 @@ const RestaurantMenu = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   )
 }
