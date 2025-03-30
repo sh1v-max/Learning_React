@@ -1,5 +1,5 @@
 import Shimmer from './Shimmer'
-import { IMG_CDN_URL } from "../utils/constants"
+import { IMG_CDN_URL } from '../utils/constants'
 import { useParams } from 'react-router'
 import useRestaurantMenu from '../utils/useRestaurantMenu'
 import '../css/RestaurantMenu.css'
@@ -7,23 +7,12 @@ import '../css/RestaurantMenu.css'
 const RestaurantMenu = () => {
   const { resId } = useParams()
 
-  //^ we don't need this anymore
-  // const [resInfo, setResInfo] = useState(null)
-
   const resInfo = useRestaurantMenu(resId)
-
-  // useEffect(() => {
-  //   fetchData()
-  // }, [])
-  // const fetchData = async () => {
-  //   const data = await fetch(MENU_API + resId)
-  //   const json = await data.json()
-  //   setResInfo(json?.data)
-  // }
 
   if (resInfo === null) return <Shimmer />
 
   const {
+    cloudinaryImageId,
     name,
     avgRating,
     areaName,
@@ -31,7 +20,7 @@ const RestaurantMenu = () => {
     cuisines,
     sla,
     totalRatingsString,
-  } = resInfo?.cards[2]?.card?.card?.info
+  } = resInfo?.cards[2]?.card?.card?.info || {}
 
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
@@ -39,13 +28,16 @@ const RestaurantMenu = () => {
   return (
     <div className="restaurant-container">
       <div className="restaurant-header">
-        <h1>{name}</h1>
-        <p className="rating">
-          ⭐ {avgRating} ({totalRatingsString})
-        </p>
-        <p className="cost">{costForTwoMessage}</p>
-        <p className="cuisines">Cuisines: {cuisines.join(', ')}</p>
-        <p className="delivery-time">⏳ {sla.slaString}</p>
+        <img src={IMG_CDN_URL + cloudinaryImageId} alt={name} />
+        <div>
+          <h1>{name}</h1>
+          <p className="rating">
+            ⭐ {avgRating} ({totalRatingsString})
+          </p>
+          <p className="cost">{costForTwoMessage}</p>
+          <p className="cuisines">Cuisines: {cuisines.join(', ')}</p>
+          <p className="delivery-time">⏳ {sla.slaString}</p>
+        </div>
       </div>
       <div className="menu-section">
         <h2>Menu</h2>
@@ -72,5 +64,5 @@ export default RestaurantMenu
 //? why creating custom hook is better?
 // because it makes our code more clean and readable
 // we can reuse it in other components as well
-// in case, there is some issue with let's say fetching data, or any custom hook... 
+// in case, there is some issue with let's say fetching data, or any custom hook...
 // we just need to check that file, it wont affect other components
