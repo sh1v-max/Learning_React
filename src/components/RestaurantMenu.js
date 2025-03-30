@@ -1,4 +1,5 @@
 import Shimmer from './Shimmer'
+import { IMG_CDN_URL } from "../utils/constants"
 import { useParams } from 'react-router'
 import useRestaurantMenu from '../utils/useRestaurantMenu'
 import '../css/RestaurantMenu.css'

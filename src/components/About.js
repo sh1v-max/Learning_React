@@ -8,7 +8,6 @@ import '../css/About.css'
 const About = () => {
   return (
     <div className="about-container">
-      <h1 className="text-3xl font-bold underline bg-red-500">Hello</h1>
       <div className="about-detail">
         <h1>
           Welcome to Bite<span>Swift</span>

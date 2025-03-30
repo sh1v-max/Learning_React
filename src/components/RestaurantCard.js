@@ -1,4 +1,4 @@
-import { CDN_URL } from "../utils/constants"
+import { IMG_CDN_URL } from "../utils/constants"
 import "../css/restaurantCard.css"
 
 const RestaurantCard = (props) => {
@@ -22,7 +22,7 @@ const RestaurantCard = (props) => {
       <img
         className="res-img"
         src={
-          CDN_URL +
+          IMG_CDN_URL +
           cloudinaryImageId
         }
         alt="res-logo"
