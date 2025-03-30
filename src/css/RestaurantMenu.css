@@ -79,3 +79,77 @@
 .delivery-time {
 }
 
+/* ============================menu========================= */
+.menu-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e2e2;
+}
+
+.left {
+  flex: 1;
+}
+
+.left h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.left h4 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.left p {
+  font-size: 14px;
+  color: #777;
+  max-width: 300px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right img {
+  width: 100px;  /* Small image */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.add-btn {
+  background: #ff6600;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background: #e55a00;
+}

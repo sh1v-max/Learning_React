@@ -6,7 +6,6 @@ import '../css/RestaurantMenu.css'
 
 const RestaurantMenu = () => {
   const { resId } = useParams()
-
   const resInfo = useRestaurantMenu(resId)
 
   if (resInfo === null) return <Shimmer />
@@ -24,40 +23,70 @@ const RestaurantMenu = () => {
     sla,
   } = resInfo?.cards[2]?.card?.card?.info || {}
 
-  const { itemCards } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+  // const { itemCards } =
+  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+  //   console.log(itemCards)
+
+  const cards =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || []
+
+  let itemCards =
+    cards.find((c) => c?.card?.card?.itemCards)?.card?.card?.itemCards || []
 
   return (
     <div className="restaurant-container">
       <div className="restaurant-header">
-        <div className='res-image'>
+        <div className="res-image">
           <img src={IMG_CDN_URL + cloudinaryImageId} alt={name} />
         </div>
         <div className="res-header-details">
           <h1>{name}</h1>
-          {/* <h3>{locality}</h3> */}
           <h3>{areaName}</h3>
           <p className="cuisines">Cuisines: {cuisines.join(', ')}</p>
           <div className="info">
             <p className="star">⭐{avgRating}</p>
-            <p>({totalRatingsString}) &nbsp;||</p>
-            <p className="cost">{costForTwoMessage} &nbsp;||</p>
+            <p>({totalRatingsString}) &nbsp;•</p>
+            <p className="cost">{costForTwoMessage} &nbsp;•</p>
             <p className="delivery-time">⏳ {sla.slaString}</p>
           </div>
         </div>
       </div>
 
-      {/* <div className="menu-section">
-        <h2>Menu</h2>
-        <ul className="menu-list">
-          {itemCards.map((item) => (
-            <li key={item.card.info.id}>
-              {item.card.info.name} - Rs
-              {item.card.info.price / 100} ./-
-            </li>
-          ))}
-        </ul>
-      </div> */}
+      {itemCards.length ? (
+        itemCards.map((item) => {
+          const {
+            id,
+            name,
+            price,
+            defaultPrice,
+            avgRating,
+            ratings,
+            imageId,
+            description,
+          } = item.card.info
+          return (
+            <div key={id} className="menu-items">
+              <div className="left">
+                <h2>{name}</h2>
+                <h4>₹{price / 100 || defaultPrice / 100}</h4>
+                <p>
+                  {(description && description.slice(0, 60)) || 'Dummy Data'}
+                </p>
+                <h4 className="rating">
+                  <p className="star">⭐{avgRating}</p>
+                  {/* <p>({totalRatingsString}) &nbsp;</p> */}
+                </h4>
+              </div>
+              <div className="right">
+                <img src={IMG_CDN_URL + imageId} alt={name} />
+                <button className="add-btn">ADD</button>
+              </div>
+            </div>
+          )
+        })
+      ) : (
+        <h2>No items available</h2>
+      )}
     </div>
   )
 }
