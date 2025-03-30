@@ -64,6 +64,12 @@ const RestaurantMenu = () => {
             imageId,
             description,
           } = item.card.info
+          console.log( `id: ${id}`)
+          console.log( `name: ${name}`)
+          console.log( `price: ${price}`)
+          console.log( `defaultPrice: ${defaultPrice}`)
+          console.log( `avgRating: ${avgRating}`)
+          console.log( `ratings: ${ratings}`)
           return (
             <div key={id} className="menu-items">
               <div className="left">
@@ -73,7 +79,9 @@ const RestaurantMenu = () => {
                   {(description && description.slice(0, 60)) || 'Dummy Data'}
                 </p>
                 <h4 className="rating">
-                  <p className="star">⭐{avgRating}</p>
+                  <p className="star">⭐{ratings?.aggregatedRating?.rating || 3.8}</p>
+                  <p>({ratings?.aggregatedRating?.ratingCountV2 || 6})</p>
+                  {/* {console.log(avgRating)} */}
                   {/* <p>({totalRatingsString}) &nbsp;</p> */}
                 </h4>
               </div>
