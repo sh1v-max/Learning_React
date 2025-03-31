@@ -106,3 +106,4 @@ export default RestaurantMenu
 //& and later on, we can use out custom hook here and other components as well (if needed)
 // using hook here 👇
 // const resInfo = useRestaurantMenu(resId)
+//? why creating custom hook is better?
