@@ -102,3 +102,4 @@ const RestaurantMenu = () => {
 export default RestaurantMenu
 
 //& as resInfo was used for fetching and getting data...
+//& we can create a custom hook useRestaurantMenu.js and use it in this component (see commented code)
