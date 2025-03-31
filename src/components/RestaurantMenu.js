@@ -102,12 +102,3 @@ const RestaurantMenu = () => {
 export default RestaurantMenu
 
 //& as resInfo was used for fetching and getting data...
-//& we can create a custom hook useRestaurantMenu.js and use it in this component (see commented code)
-//& and later on, we can use out custom hook here and other components as well (if needed)
-// using hook here 👇
-// const resInfo = useRestaurantMenu(resId)
-//? why creating custom hook is better?
-// because it makes our code more clean and readable
-// we can reuse it in other components as well
-// in case, there is some issue with let's say fetching data, or any custom hook...
-// we just need to check that file, it wont affect other components
