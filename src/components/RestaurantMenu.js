@@ -109,3 +109,5 @@ export default RestaurantMenu
 //? why creating custom hook is better?
 // because it makes our code more clean and readable
 // we can reuse it in other components as well
+// in case, there is some issue with let's say fetching data, or any custom hook...
+// we just need to check that file, it wont affect other components
