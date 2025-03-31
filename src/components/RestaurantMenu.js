@@ -105,3 +105,4 @@ export default RestaurantMenu
 //& we can create a custom hook useRestaurantMenu.js and use it in this component (see commented code)
 //& and later on, we can use out custom hook here and other components as well (if needed)
 // using hook here 👇
+// const resInfo = useRestaurantMenu(resId)
