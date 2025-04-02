@@ -18,7 +18,7 @@ body {
 }
 
 /* ==================== Header ============================ */
-/* .header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,10 +32,10 @@ body {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-} */
+}
 
 /* ===================== Logo Styling ==========================*/
-/* .logo-container {
+.logo-container {
   display: flex;
   align-items: center;
 }
@@ -50,10 +50,10 @@ body {
 
 .logo:hover {
   border: 1px solid #ff4d00;
-} */
+}
 
 /* ======================= Nav Bar Styling =================== */
-/* .nav-items {
+.nav-items {
   display: flex;
   align-items: center;
 }
@@ -89,10 +89,10 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-} */
+}
 
 /* ========================== Login Button ======================= */
-/* .login-btn {
+.login-btn {
   background-color: #ff6600;
   color: white;
   border: none;
@@ -107,10 +107,10 @@ body {
 .login-btn:hover {
   background-color: #cc5500;
   transform: scale(1.05);
-} */
+}
 
 /* ================= Responsive Design ==================== */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .header {
     flex-direction: row;
     justify-content: space-between;
@@ -187,7 +187,7 @@ body {
     width: 60%;
     margin: 10px auto;
   }
-} */
+}
 
 
 /* ======================= Footer ==================== */
