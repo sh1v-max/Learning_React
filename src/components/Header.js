@@ -2,11 +2,14 @@ import { LOGO_URL } from '../utils/constants'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
+// import headerImg from '../images/header.jpg'
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState('Login')
   const [isMenuOpen, setIsMenuOpen] = useState(false) // Toggle state for menu
   const onlineStatus = useOnlineStatus()
+
+  // console.log(`image: - ${headerImg}`)
 
   useEffect(() => {}, [btnNameReact])
 
@@ -15,6 +18,7 @@ const Header = () => {
       <div className="logo-container">
         <Link to="/">
           <img className="logo" src={LOGO_URL} alt="logo" />
+          {/* <img className="logo"  src= {headerImg} alt="" /> */}
         </Link>
       </div>
 
