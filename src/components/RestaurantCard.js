@@ -41,4 +41,8 @@ const RestaurantCard = (props) => {
   )
 }
 
+// higher order component is a function that takes a component as input and returns a new component
+// input - RestaurantCard
+// output - RestaurantCard with discount offer if available else normal RestaurantCard
+
 export default RestaurantCard;
