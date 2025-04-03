@@ -44,5 +44,19 @@ const RestaurantCard = (props) => {
 // higher order component is a function that takes a component as input and returns a new component
 // input - RestaurantCard
 // output - RestaurantCard with discount offer if available else normal RestaurantCard
+export const withDiscountOffer = (RestaurantCard) => {
+  return (props) => {
+    const { aggregatedDiscountInfoV3 } = props
+
+    return (
+      <div className="w-[250px] h-[300px] bg-white rounded-[8px] shadow-md cursor-pointer overflow-hidden hover:scale-[0.98] relative">
+        {aggregatedDiscountInfoV3 && (
+          <div className="text-gray-50 text-xl font-extrabold absolute top-[55%] left-[2px]">{`${aggregatedDiscountInfoV3.header} ${aggregatedDiscountInfoV3.subHeader}`}</div>
+        )}
+        <RestaurantCard {...props} />
+      </div>
+    )
+  }
+}
 
 export default RestaurantCard;
