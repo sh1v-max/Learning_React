@@ -11,8 +11,8 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState('')
 
-  console.log("body rendered", listOfRestaurants)
-  
+  // console.log('body rendered', listOfRestaurants)
+
   useEffect(() => {
     fetchData()
   }, [])
@@ -29,6 +29,7 @@ const Body = () => {
     setFilteredRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     )
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[1].info.aggregatedDiscountInfoV3)
   }
 
   const onlineStatus = useOnlineStatus()
@@ -69,17 +70,19 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div>
-          <div className="title-container">
+          {/* <div className="title-container">
             <p className="title">Recommended top restaurant chains</p>
-          </div>
+          </div> */}
           <div className="res-container">
             {filteredRestaurants.map((restaurant) => (
               <Link
                 key={restaurant.info.id}
                 to={'/restaurant/' + restaurant.info.id}
               >
-                {/* if a restaurant has discount offer, add discount restaurant */}
-                <RestaurantCard resData={restaurant} />
+                {
+                  // if a restaurant has discount offer, add discount restaurant
+                  <RestaurantCard resData={restaurant} />
+                }
               </Link>
             ))}
           </div>
