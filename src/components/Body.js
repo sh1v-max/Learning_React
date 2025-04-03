@@ -11,7 +11,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState('')
 
-  console.log(listOfRestaurants)
+  console.log("body rendered", listOfRestaurants)
   
   useEffect(() => {
     fetchData()
@@ -78,6 +78,7 @@ const Body = () => {
                 key={restaurant.info.id}
                 to={'/restaurant/' + restaurant.info.id}
               >
+                {/* if a restaurant has discount offer, add discount restaurant */}
                 <RestaurantCard resData={restaurant} />
               </Link>
             ))}
