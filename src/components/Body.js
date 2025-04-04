@@ -1,4 +1,4 @@
-import RestaurantCard from './RestaurantCard'
+import RestaurantCard, { withDiscountOffer } from './RestaurantCard'
 import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,8 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([])
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState('')
-
+  const RestaurantCardWithDiscount = withDiscountOffer(RestaurantCard)
+  
   // console.log('body rendered', listOfRestaurants)
 
   useEffect(() => {
@@ -70,9 +71,6 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div>
-          {/* <div className="title-container">
-            <p className="title">Recommended top restaurant chains</p>
-          </div> */}
           <div className="res-container">
             {filteredRestaurants.map((restaurant) => (
               <Link

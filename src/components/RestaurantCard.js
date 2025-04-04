@@ -45,6 +45,8 @@ const RestaurantCard = (props) => {
 // input - RestaurantCard
 // output - RestaurantCard with discount offer if available else normal RestaurantCard
 export const withDiscountOffer = (RestaurantCard) => {
+  // HOC takes a component as input and returns a new component
+  // input - RestaurantCard
   return (props) => {
     const { aggregatedDiscountInfoV3 } = props
 
