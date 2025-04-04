@@ -71,6 +71,9 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div>
+          {/* <div className="title-container">
+            <p className="title">Recommended top restaurant chains</p>
+          </div> */}
           <div className="res-container">
             {filteredRestaurants.map((restaurant) => (
               <Link
