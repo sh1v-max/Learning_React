@@ -75,9 +75,9 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div>
-          {/* <div className="title-container">
+          <div className="title-container">
             <p className="title">Recommended top restaurant chains</p>
-          </div> */}
+          </div>
           <div className="res-container">
             {filteredRestaurants.map((restaurant) => (
               <Link
@@ -85,9 +85,9 @@ const Body = () => {
                 to={'/restaurant/' + restaurant.info.id}
               >
                 {
-                  // If restaurant has discount offer then show discount offer
+                  // If restaurant has discount offer then show discount offer else without discount
                   restaurant.info.aggregatedDiscountInfoV3 ? (
-                    // console.log("restaurant" + restaurant.info.aggregatedDiscountInfoV3),
+                    // console.log(restaurant.info.aggregatedDiscountInfoV3),
                     <RestaurantCardWithDiscount resData={restaurant} />
                   ) : (
                     <RestaurantCard resData={restaurant} />
