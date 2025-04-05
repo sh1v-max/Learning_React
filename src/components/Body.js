@@ -31,10 +31,10 @@ const Body = () => {
     setFilteredRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     )
-    console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants[1].info.aggregatedDiscountInfoV3
-    )
+    // console.log(
+    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+    //     ?.restaurants[1].info.aggregatedDiscountInfoV3
+    // )
   }
 
   const onlineStatus = useOnlineStatus()
@@ -84,9 +84,18 @@ const Body = () => {
                 key={restaurant.info.id}
                 to={'/restaurant/' + restaurant.info.id}
               >
-                {
+                {/* {
                   // if a restaurant has discount offer, add discount restaurant
                   <RestaurantCard resData={restaurant} />
+                } */}
+
+                {
+                  // If restaurant has discount offer then show discount offer
+                  restaurant.info.aggregatedDiscountInfoV3 ? (
+                    <RestaurantCardWithDiscount resData={restaurant} />
+                  ) : (
+                    <RestaurantCard resData={restaurant} />
+                  )
                 }
               </Link>
             ))}

@@ -57,6 +57,7 @@ export const withDiscountOffer = (RestaurantCard) => {
         {aggregatedDiscountInfoV3 && (
           // <div className="text-gray-50 text-xl font-extrabold absolute top-[55%] left-[2px]">{`${aggregatedDiscountInfoV3.header} ${aggregatedDiscountInfoV3.subHeader}`}</div>
           <div className="discount">{`${aggregatedDiscountInfoV3.header} ${aggregatedDiscountInfoV3.subHeader}`}</div>
+          // {console.log("hello")}
         )}
         <RestaurantCard {...props} />
         {/* Render the original RestaurantCard with all its props */}
