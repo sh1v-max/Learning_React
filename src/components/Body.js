@@ -84,14 +84,10 @@ const Body = () => {
                 key={restaurant.info.id}
                 to={'/restaurant/' + restaurant.info.id}
               >
-                {/* {
-                  // if a restaurant has discount offer, add discount restaurant
-                  <RestaurantCard resData={restaurant} />
-                } */}
-
                 {
                   // If restaurant has discount offer then show discount offer
                   restaurant.info.aggregatedDiscountInfoV3 ? (
+                    // console.log("restaurant" + restaurant.info.aggregatedDiscountInfoV3),
                     <RestaurantCardWithDiscount resData={restaurant} />
                   ) : (
                     <RestaurantCard resData={restaurant} />
