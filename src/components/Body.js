@@ -10,8 +10,9 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([])
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState('')
+  // HOC for RestaurantCard with discount offer
   const RestaurantCardWithDiscount = withDiscountOffer(RestaurantCard)
-  
+
   // console.log('body rendered', listOfRestaurants)
 
   useEffect(() => {
@@ -30,7 +31,10 @@ const Body = () => {
     setFilteredRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     )
-    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants[1].info.aggregatedDiscountInfoV3)
+    console.log(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants[1].info.aggregatedDiscountInfoV3
+    )
   }
 
   const onlineStatus = useOnlineStatus()
