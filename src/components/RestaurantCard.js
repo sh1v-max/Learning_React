@@ -52,7 +52,7 @@ export const withDiscountOffer = (RestaurantCard) => {
       <div className="relative inline-block">
         {/* Discount Label */}
         {aggregatedDiscountInfoV3 && (
-          <div className="absolute top-4 left-2 bg-orange-500 text-white text-m  rounded shadow-md z-10">
+          <div className="absolute top-2 left-2 bg-orange-500 text-white text-m  rounded shadow-md z-10">
             {`${aggregatedDiscountInfoV3.header} ${aggregatedDiscountInfoV3.subHeader}`}
           </div>
         )}
