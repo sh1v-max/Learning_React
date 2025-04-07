@@ -1,10 +1,10 @@
-const RestaurantCategory = () => {
+const RestaurantCategory = ({data}) => {
+
+  console.log(data)
+  
   return (
     <div>
-      <p>RestaurantCategory</p>
-      {
-        // console.log("this is it")
-      }
+      <span>{data.title}</span>
     </div>
   )
 }
