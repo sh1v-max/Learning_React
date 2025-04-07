@@ -3,9 +3,9 @@ const RestaurantCategory = ({data}) => {
   console.log(data)
   
   return (
-    <div className="border-b border-gray-200 py-4 px-2">
-      <div className="flex justify-between items-center text-xl font-extrabold cursor-pointer">
-        <span>{data.title}</span>
+    <div className="">
+      <div className="flex border-b border-gray-200 justify-between items-center my-4 py-4 px-2 shadow-lg bg-gray-100 cursor-pointer">
+        <span className="text-l font-extrabold">{data.title} ({data?.itemCards?.length})</span>
         <span>⬇️</span>
       </div>
     </div>
