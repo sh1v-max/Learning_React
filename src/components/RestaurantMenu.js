@@ -2,6 +2,9 @@ import Shimmer from './Shimmer'
 import { IMG_CDN_URL } from '../utils/constants'
 import { useParams } from 'react-router'
 import useRestaurantMenu from '../utils/useRestaurantMenu'
+import { MdStarRate } from 'react-icons/md'
+import RestaurantCategory from './RestaurantCategory'
+// import { RestaurantCategory } from './RestaurantCategory'
 import '../css/RestaurantMenu.css'
 
 const RestaurantMenu = () => {
@@ -29,7 +32,7 @@ const RestaurantMenu = () => {
 
   const cards =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || []
-    console.log(cards)
+  // console.log(cards)
 
   let itemCards =
     cards.find((c) => c?.card?.card?.itemCards)?.card?.card?.itemCards || []
@@ -37,31 +40,58 @@ const RestaurantMenu = () => {
   const categories =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
+        // card?. is same as ["card"]?. in the object
+        // we can not write @type directly, so we use ['@type']
         c?.card?.['card']?.['@type'] ===
         'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
     )
-    console.log(categories)
+  // console.log(categories)
 
   return (
     <div className="restaurant-container">
+      {/* <RestaurantCategory /> */}
       <div className="restaurant-header">
-        <div className="res-image">
-          <img src={IMG_CDN_URL + cloudinaryImageId} alt={name} />
-        </div>
+        <img
+          className="res-image"
+          src={IMG_CDN_URL + cloudinaryImageId}
+          alt={name}
+        />
+
         <div className="res-header-details">
           <h1>{name}</h1>
           <h3>{areaName}</h3>
           <p className="cuisines">Cuisines: {cuisines.join(', ')}</p>
+
           <div className="info">
-            <p className="star">⭐{avgRating}</p>
-            <p>({totalRatingsString}) &nbsp;•</p>
+            <MdStarRate
+              className="w-[18px] h-[18px] rounded-[50%] p-[2px] mr-[5px] text-[#eceaea]"
+              style={
+                avgRatingString > 4.0
+                  ? { backgroundColor: 'green' }
+                  : { backgroundColor: 'red' }
+              }
+            />
+
+            <span>
+              {avgRatingString || 3.8} ({totalRatingsString || '1K+ ratings'})
+              &nbsp;•
+            </span>
             <p className="cost">{costForTwoMessage} &nbsp;•</p>
             <p className="delivery-time">⏳ {sla.slaString}</p>
           </div>
         </div>
       </div>
 
-      {itemCards.length ? (
+      {/* Creating Category Accordion */}
+
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+        />
+      ))}
+
+      {/* {itemCards.length ? (
         itemCards.map((item) => {
           const {
             id,
@@ -92,8 +122,6 @@ const RestaurantMenu = () => {
                     ⭐{ratings?.aggregatedRating?.rating || 3.8}
                   </p>
                   <p>({ratings?.aggregatedRating?.ratingCountV2 || 6})</p>
-                  {/* {console.log(avgRating)} */}
-                  {/* <p>({totalRatingsString}) &nbsp;</p> */}
                 </h4>
               </div>
               <div className="right">
@@ -105,7 +133,7 @@ const RestaurantMenu = () => {
         })
       ) : (
         <h2>No items available</h2>
-      )}
+      )} */}
     </div>
   )
 }
