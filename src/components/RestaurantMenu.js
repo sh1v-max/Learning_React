@@ -29,9 +29,18 @@ const RestaurantMenu = () => {
 
   const cards =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || []
+    console.log(cards)
 
   let itemCards =
     cards.find((c) => c?.card?.card?.itemCards)?.card?.card?.itemCards || []
+
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c?.card?.['card']?.['@type'] ===
+        'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+    )
+    console.log(categories)
 
   return (
     <div className="restaurant-container">
@@ -64,12 +73,12 @@ const RestaurantMenu = () => {
             imageId,
             description,
           } = item.card.info
-          console.log( `id: ${id}`)
-          console.log( `name: ${name}`)
-          console.log( `price: ${price}`)
-          console.log( `defaultPrice: ${defaultPrice}`)
-          console.log( `avgRating: ${avgRating}`)
-          console.log( `ratings: ${ratings}`)
+          // console.log(`id: ${id}`)
+          // console.log(`name: ${name}`)
+          // console.log(`price: ${price}`)
+          // console.log(`defaultPrice: ${defaultPrice}`)
+          // console.log(`avgRating: ${avgRating}`)
+          // console.log(`ratings: ${ratings}`)
           return (
             <div key={id} className="menu-items">
               <div className="left">
@@ -79,7 +88,9 @@ const RestaurantMenu = () => {
                   {(description && description.slice(0, 60)) || 'Dummy Data'}
                 </p>
                 <h4 className="rating">
-                  <p className="star">⭐{ratings?.aggregatedRating?.rating || 3.8}</p>
+                  <p className="star">
+                    ⭐{ratings?.aggregatedRating?.rating || 3.8}
+                  </p>
                   <p>({ratings?.aggregatedRating?.ratingCountV2 || 6})</p>
                   {/* {console.log(avgRating)} */}
                   {/* <p>({totalRatingsString}) &nbsp;</p> */}

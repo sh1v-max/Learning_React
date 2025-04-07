@@ -46,7 +46,7 @@ export const withDiscountOffer = (RestaurantCard) => {
   // input - RestaurantCard
   return (props) => {
     const { aggregatedDiscountInfoV3 } = props.resData.info
-    console.log(aggregatedDiscountInfoV3)
+    // console.log(aggregatedDiscountInfoV3)
 
     return (
       <div className="relative inline-block">
