@@ -84,12 +84,14 @@ const RestaurantMenu = () => {
 
       {/* Creating Category Accordion */}
 
-      {categories.map((category, index) => (
-        <RestaurantCategory
-          key={category?.card?.card?.title}
-          data={category?.card?.card}
-        />
-      ))}
+      <div className="w-full shadow-md px-[20px] bg-gray-50 rounded-md py-[10px] my-[30px]">
+        {categories.map((category, index) => (
+          <RestaurantCategory
+            key={category?.card?.card?.title}
+            data={category?.card?.card}
+          />
+        ))}
+      </div>
 
       {/* {itemCards.length ? (
         itemCards.map((item) => {
