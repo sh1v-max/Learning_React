@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import ItemList from './ItemList'
 
-const RestaurantCategory = ({ data }) => {
-  const [showItems, setShowItems] = useState(false)
+const RestaurantCategory = ({ data, showItems }) => {
+  // const [showItems, setShowItems] = useState(false)
   // console.log(data)
 
-  const handleClick = () => {
-    setShowItems(!showItems)
-  }
+
+  // const handleClick = () => {
+  //   setShowItems(!showItems)
+  // }
+
 
   return ( 
     <div>
@@ -15,7 +17,7 @@ const RestaurantCategory = ({ data }) => {
         {/* Accordion Header */}
         <div
           className="flex justify-between items-center text-xl font-extrabold cursor-pointer"
-          onClick={handleClick}
+          // onClick={handleClick}
         >
           <span>{`${data?.title.slice(0, 40)} (${
             data?.itemCards?.length
