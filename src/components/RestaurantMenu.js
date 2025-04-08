@@ -6,10 +6,12 @@ import { MdStarRate } from 'react-icons/md'
 import RestaurantCategory from './RestaurantCategory'
 // import { RestaurantCategory } from './RestaurantCategory'
 import '../css/RestaurantMenu.css'
+import { useState } from 'react'
 
 const RestaurantMenu = () => {
   const { resId } = useParams()
   const resInfo = useRestaurantMenu(resId)
+  const [showIndex, setShowIndex] = useState(0)
 
   if (resInfo === null) return <Shimmer />
 
@@ -37,19 +39,18 @@ const RestaurantMenu = () => {
   let itemCards =
     cards.find((c) => c?.card?.card?.itemCards)?.card?.card?.itemCards || []
 
-  const categories =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (c) =>
-        // card?. is same as ["card"]?. in the object
-        // we can not write @type directly, so we use ['@type']
-        c?.card?.['card']?.['@type'] ===
-        'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
-    )
+  const categories = cards.filter(
+    (c) =>
+      // card?. is same as ["card"]?. in the object
+      // we can not write @type directly, so we use ['@type']
+      c?.card?.['card']?.['@type'] ===
+      'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+  )
   // console.log(categories)
 
   return (
     <div className="restaurant-container">
-      {/* <RestaurantCategory /> */}
+      {/* <Restaurant Categories /> */}
       <div className="restaurant-header">
         <img
           className="res-image"
@@ -83,59 +84,12 @@ const RestaurantMenu = () => {
       </div>
 
       {/* Creating Category Accordion */}
-
-      <div className="w-full shadow-md px-[20px] bg-gray-50 rounded-md py-[10px] my-[30px]">
-        {categories.map((category, index) => (
-          <RestaurantCategory
-            key={category?.card?.card?.title}
-            data={category?.card?.card}
-          />
-        ))}
-      </div>
-
-      {/* {itemCards.length ? (
-        itemCards.map((item) => {
-          const {
-            id,
-            name,
-            price,
-            defaultPrice,
-            avgRating,
-            ratings,
-            imageId,
-            description,
-          } = item.card.info
-          // console.log(`id: ${id}`)
-          // console.log(`name: ${name}`)
-          // console.log(`price: ${price}`)
-          // console.log(`defaultPrice: ${defaultPrice}`)
-          // console.log(`avgRating: ${avgRating}`)
-          // console.log(`ratings: ${ratings}`)
-          return (
-            <div key={id} className="menu-items">
-              <div className="left">
-                <h2>{name}</h2>
-                <h4>₹{price / 100 || defaultPrice / 100}</h4>
-                <p>
-                  {(description && description.slice(0, 60)) || 'Dummy Data'}
-                </p>
-                <h4 className="rating">
-                  <p className="star">
-                    ⭐{ratings?.aggregatedRating?.rating || 3.8}
-                  </p>
-                  <p>({ratings?.aggregatedRating?.ratingCountV2 || 6})</p>
-                </h4>
-              </div>
-              <div className="right">
-                <img src={IMG_CDN_URL + imageId} alt={name} />
-                <button className="add-btn">ADD</button>
-              </div>
-            </div>
-          )
-        })
-      ) : (
-        <h2>No items available</h2>
-      )} */}
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+        />
+      ))}
     </div>
   )
 }
