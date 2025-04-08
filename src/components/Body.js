@@ -69,19 +69,6 @@ const Body = () => {
           }}
         />
         <button onClick={handleSearch}>Search</button>
-        <input
-          type="text"
-          className="search-btn"
-          placeholder="Search for restaurant name..."
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              handleSearch()
-            }
-          }}
-        />
-        <button onClick={handleSearch}>Search</button>
       </div>
 
       {filteredRestaurants.length === 0 ? (
