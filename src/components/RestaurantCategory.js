@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import ItemList from './ItemList'
+import { MdKeyboardArrowUp } from 'react-icons/md'
+import { RiArrowDownSLine } from 'react-icons/ri'
 
 const RestaurantCategory = ({ data, showItems, setShowIndex}) => {
   // const [showItems, setShowItems] = useState(false)
@@ -23,7 +25,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex}) => {
             data?.itemCards?.length
           })`}</span>
           <div className="text-[30px]">
-            <span>⬇️</span>
+            {showItems ? <MdKeyboardArrowUp /> : <RiArrowDownSLine />}
           </div>
         </div>
 

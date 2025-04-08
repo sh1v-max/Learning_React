@@ -1,13 +1,16 @@
 import { LOGO_URL } from '../utils/constants'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
+import UserContext from '../utils/UserContext'
 // import headerImg from '../images/header.jpg'
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState('Login')
   const [isMenuOpen, setIsMenuOpen] = useState(false) // Toggle state for menu
   const onlineStatus = useOnlineStatus()
+  const {loggedInUser} = useContext(UserContext)
+  console.log(loggedInUser)
 
   // console.log(`image: - ${headerImg}`)
 
@@ -47,6 +50,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/">Cart</Link>
+          </li>
+          <li>
+            <Link to="/">{loggedInUser}</Link>
           </li>
           <button
             className="login-btn"
