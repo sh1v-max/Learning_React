@@ -4,14 +4,13 @@ import { useParams } from 'react-router'
 import useRestaurantMenu from '../utils/useRestaurantMenu'
 import { MdStarRate } from 'react-icons/md'
 import RestaurantCategory from './RestaurantCategory'
-// import { RestaurantCategory } from './RestaurantCategory'
-import '../css/RestaurantMenu.css'
 import { useState } from 'react'
+import '../css/RestaurantMenu.css'
 
 const RestaurantMenu = () => {
   const { resId } = useParams()
   const resInfo = useRestaurantMenu(resId)
-  const [showIndex, setShowIndex] = useState(0)
+  const [showIndex, setShowIndex] = useState (0)
 
   if (resInfo === null) return <Shimmer />
 
