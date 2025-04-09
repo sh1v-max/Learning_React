@@ -1,0 +1,138 @@
+/* @import "tailwindcss"; */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px 40px 80px ;
+  background-color: #fff8f1;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-detail {
+  width: 60%;
+}
+
+.about-detail h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.about-detail h1 span {
+  background-color: #ff6600;
+  padding: 0 10px;
+  border-radius: 15px;
+  color: white;
+}
+
+.about-detail .tag {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.about-detail h4 {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #666;
+}
+
+.about-detail p {
+  font-size: 1rem;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.about-detail ul {
+  margin-top: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.about-detail ul li {
+  font-size: 1rem;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.about-detail ul li::before {
+  content: "✔";
+  color: #28a745;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.about-detail h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ff5733;
+}
+
+.about-img {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img .image {
+  width: 100%;
+  max-width: 450px;
+  object-fit: contain;
+  animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 780px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px;
+  }
+
+  .about-detail {
+    width: 100%;
+  }
+
+  .about-img {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .about-img .image {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .about-detail h1 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .about-detail .tag {
+    font-size: 2.2rem; /* Adjusted for mobile */
+  }
+
+  .about-detail h4 {
+    font-size: 1rem;
+  }
+
+  .about-detail p, 
+  .about-detail ul li {
+    font-size: 0.9rem;
+  }
+
+  .about-detail h3 {
+    font-size: 1rem;
+  }
+
+  .about-img .image {
+    max-width: 250px;
+  }
+}
