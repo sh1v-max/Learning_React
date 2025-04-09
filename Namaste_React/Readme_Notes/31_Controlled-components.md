@@ -87,7 +87,6 @@ Here, React doesn’t control the value — it’s up to the browser.
 
 ### ✅ Use Controlled Components When:
 
-- **`Controlled Components`**: When you need more control over the form data, such as when implementing complex validation, dynamic forms, or handling data changes.
 - You want **validation**
 - You need to **submit form data**
 - You want to **clear/reset fields**
