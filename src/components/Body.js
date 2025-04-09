@@ -1,9 +1,11 @@
 import RestaurantCard, { withDiscountOffer } from './RestaurantCard'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Shimmer from './Shimmer'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
+import UserContext from '../utils/UserContext'
 import '../css/Body.css'
+import { GiLogging } from 'react-icons/gi'
 
 const Body = () => {
   // console.log(useState())
@@ -53,8 +55,20 @@ const Body = () => {
     setFilteredRestaurants(filtered)
   }
 
+  const {loggedInUser, setUserName } = useContext(UserContext)
+
   return (
     <div className="body">
+      <div className="search">
+        <label>Username: </label>
+        <input
+        value={loggedInUser}
+          onChange={(e) => {
+            setUserName(e.target.value)
+          }}
+        />
+        {/* <button>User</button> */}
+      </div>
       <div className="search">
         <input
           type="text"

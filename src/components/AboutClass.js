@@ -27,6 +27,7 @@ class AboutClass extends React.Component {
         <div>
           loggedIn user: 
           <UserContext.Consumer>
+            {/* this is a component */}
             {({ loggedInUser }) => {
               return <h2>{loggedInUser}</h2>
             }}
