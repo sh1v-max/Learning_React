@@ -12,6 +12,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState('')
   const onlineStatus = useOnlineStatus()
+  const [tempUserName, setTempUserName] = useState('')
 
   // HOC for RestaurantCard with discount offer
   const RestaurantCardWithDiscount = withDiscountOffer(RestaurantCard)
@@ -48,20 +49,26 @@ const Body = () => {
     setFilteredRestaurants(filtered)
   }
 
-  const {loggedInUser, setUserName } = useContext(UserContext)
+  const handleUserNameSubmit = () => {
+    if (tempUserName.trim().length) {
+      setUserName(tempUserName)
+    }
+    setTempUserName('') // Clear the input box after submission
+  }
+
+  const { loggedInUser, setUserName } = useContext(UserContext)
 
   return (
     <div className="body">
       <div className="search">
-        <label>Username: </label>
+        {/* <label>Username: </label> */}
         <input
-        type='text'
-        placeholder='Shiv...'
-        value={loggedInUser}
-          onChange={(e) => {
-            setUserName(e.target.value)
-          }}
+          type="text"
+          placeholder="Enter User name..."
+          value={tempUserName}
+          onChange={(e) => setTempUserName(e.target.value)}
         />
+        <button onClick={handleUserNameSubmit}>Submit</button>
         {/* <button>User</button> */}
       </div>
       <div className="search">
