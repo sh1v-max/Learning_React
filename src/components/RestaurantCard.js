@@ -1,8 +1,11 @@
 import { IMG_CDN_URL } from '../utils/constants'
 import '../css/restaurantCard.css'
+import { useContext } from 'react'
+import UserContext from '../utils/UserContext'
 
 const RestaurantCard = (props) => {
   const { resData } = props
+  const {loggedInUser} = useContext(UserContext)
 
   const {
     cloudinaryImageId,
@@ -33,6 +36,7 @@ const RestaurantCard = (props) => {
         </div>
         <h4 className="res-cuisine">{cuisines.join(', ')}</h4>
         <h4 className="res-location">{areaName}</h4>
+        <h4 className="res-location">{loggedInUser}</h4>
       </div>
     </div>
   )

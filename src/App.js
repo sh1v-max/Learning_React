@@ -8,6 +8,7 @@ import Contact from './components/Contact'
 import Error from './components/Error'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import RestaurantMenu from './components/RestaurantMenu'
+import AboutClass from './components/AboutClass'
 // import Grocery from './components/Grocery'
 // now we don't need this
 
@@ -35,7 +36,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />,
+        element: <AboutClass />,
       },
       {
         path: '/contact',
