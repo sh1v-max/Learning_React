@@ -18,7 +18,7 @@ const Header = () => {
 
   useEffect(() => {}, [btnNameReact])
 
-  const cartItems = useSelector((store) => store.cart.items)
+  const cartItems = useSelector((store) =>store.cart.items)
   console.log(cartItems)
 
   return (
@@ -52,14 +52,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <Link to="/cart">
-              <FaCartArrowDown />
-              {cartItems.length > 0 && (
-                <span className="mb-[15px] text-white bg-red-600 w-[20px] h-[20px] text-center">
-                  {cartItems.length}
-                </span>
-              )}
-            </Link>
+            <Link to="/cart"><FaCartArrowDown /> ({cartItems.length})</Link>
           </li>
           {/* <li>
             <Link to="/">{loggedInUser}</Link>
