@@ -71,7 +71,7 @@ const Body = () => {
         <button onClick={handleUserNameSubmit}>Submit</button>
         {/* <button>User</button> */}
       </div>
-      <div className="search">
+      {/* <div className="search">
         <input
           type="text"
           className="search-btn"
@@ -85,7 +85,7 @@ const Body = () => {
           }}
         />
         <button onClick={handleSearch}>Search</button>
-      </div>
+      </div> */}
 
       {filteredRestaurants.length === 0 ? (
         <Shimmer />
