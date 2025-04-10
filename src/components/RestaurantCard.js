@@ -5,7 +5,7 @@ import UserContext from '../utils/UserContext'
 
 const RestaurantCard = (props) => {
   const { resData } = props
-  const {loggedInUser} = useContext(UserContext)
+  const { loggedInUser } = useContext(UserContext)
 
   const {
     cloudinaryImageId,
@@ -28,15 +28,21 @@ const RestaurantCard = (props) => {
         alt="res-logo"
       />
       <div className="res-details">
-        <h3 className="res-name">{name}</h3>
+        <h3 className="res-name">
+          {name.length > 23 ? name.slice(0, 20) + '...' : name.slice(0, 24)}
+        </h3>
         <div className="res-info">
           <span className="res-rating">⭐ {avgRating}</span>
           <span className="res-distance">• {sla.slaString}</span>
           <span className="res-price">• {costForTwo}</span>
         </div>
-        <h4 className="res-cuisine">{cuisines.join(', ')}</h4>
+        <h4 className="res-cuisine">
+          {cuisines.join(', ').length > 32
+            ? cuisines.join(', ').slice(0, 28) + '...'
+            : cuisines.join(', ').slice(0, 32)}
+        </h4>
         <h4 className="res-location">{areaName}</h4>
-        <h4 className="res-location">{loggedInUser}</h4>
+        {/* <h4 className="res-location">{loggedInUser}</h4> */}
       </div>
     </div>
   )
