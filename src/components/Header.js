@@ -3,18 +3,22 @@ import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
 import UserContext from '../utils/UserContext'
+import { useSelector } from 'react-redux'
 // import headerImg from '../images/header.jpg'
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState('Login')
   const [isMenuOpen, setIsMenuOpen] = useState(false) // Toggle state for menu
   const onlineStatus = useOnlineStatus()
-  const {loggedInUser} = useContext(UserContext)
-  console.log(loggedInUser)
+  const { loggedInUser } = useContext(UserContext)
+  // console.log(loggedInUser)
 
-  // console.log(`image: - ${headerImg}`)
+  // subscribing to the store using a selector
 
   useEffect(() => {}, [btnNameReact])
+
+  const cartItems = useSelector((store) =>store.cart.items)
+  console.log(cartItems)
 
   return (
     <div className="header">
@@ -31,11 +35,9 @@ const Header = () => {
       </button>
 
       {/* Navigation Items */}
-      <div className={`nav-items ${isMenuOpen ? "open" : ""}`}>
+      <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
         <ul>
-          <li>
-            {onlineStatus ? "🟢" : "🔴"}
-          </li>
+          <li>{onlineStatus ? '🟢' : '🔴'}</li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -49,7 +51,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <Link to="/">Cart</Link>
+            <Link to="/">Cart ({cartItems.length})</Link>
           </li>
           {/* <li>
             <Link to="/">{loggedInUser}</Link>
@@ -57,7 +59,7 @@ const Header = () => {
           <button
             className="login-btn"
             onClick={() =>
-              setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login")
+              setBtnNameReact(btnNameReact === 'Login' ? 'Logout' : 'Login')
             }
           >
             {btnNameReact}
@@ -65,7 +67,7 @@ const Header = () => {
         </ul>
       </div>
     </div>
-  );
+  )
 
   // with tailwindcss
 
