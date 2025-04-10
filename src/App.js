@@ -12,6 +12,7 @@ import UserContext from './utils/UserContext'
 import { Provider } from 'react-redux'
 import AboutClass from './components/AboutClass'
 import appStore from './utils/appStore'
+import Cart from './components/Cart'
 // import Grocery from './components/Grocery'
 // now we don't need this
 
@@ -63,6 +64,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/restaurant/:resId',
         element: <RestaurantMenu />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
       {
         path: '/grocery',

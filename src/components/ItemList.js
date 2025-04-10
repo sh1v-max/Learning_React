@@ -1,14 +1,21 @@
 import { MdStarRate } from 'react-icons/md'
 import { IMG_CDN_URL } from '../utils/constants'
+import { useDispatch } from 'react-redux'
+// import { addItem } from '../utils/cartSlice'
+import { addItem } from '../utils/cartSlice'
 
 const ItemList = ({ items }) => {
-  // console.log(items)
+  const dispatch = useDispatch()
+  const handleAddItems = (item) => {
+    dispatch(addItem(item))
+  }
+
   return (
     <div>
       {items.map((item) => {
         const { id, name, price, defaultPrice, ratings, imageId, description } =
-          item.card.info;
-        const avgRatingString = ratings?.aggregatedRating?.rating || 3.8;
+          item.card.info
+        const avgRatingString = ratings?.aggregatedRating?.rating || 3.8
 
         return (
           <div
@@ -21,15 +28,15 @@ const ItemList = ({ items }) => {
                 ₹{price / 100 || defaultPrice / 100}
               </h4>
               <p className="text-gray-600">
-                {(description && description.slice(0, 140)) || "Dummy Data"}
+                {(description && description.slice(0, 140)) || 'Dummy Data'}
               </p>
               <h4 className="flex font-semibold">
                 <MdStarRate
                   className="text-white w-[18px] h-[18px] rounded-[50%] p-[2px] mr-[5px]"
                   style={
                     avgRatingString > 4.0
-                      ? { backgroundColor: "green" }
-                      : { backgroundColor: "red" }
+                      ? { backgroundColor: 'green' }
+                      : { backgroundColor: 'red' }
                   }
                 />
                 <span className="text-[#484747]">
@@ -45,15 +52,18 @@ const ItemList = ({ items }) => {
                 src={IMG_CDN_URL + imageId}
                 alt={name}
               />
-              <button className="text-green-600 bg-white font-semibold rounded-md text-[1.2rem] px-[30px] py-[5px] cursor-pointer border-none relative bottom-[15px] hover:bg-gray-300 hover:text-green-800 transition-all 0.3s">
+              <button
+                className="text-green-600 bg-white font-semibold rounded-md text-[1.2rem] px-[30px] py-[5px] cursor-pointer border-none relative bottom-[15px] hover:bg-gray-300 hover:text-green-800 transition-all 0.3s"
+                onClick={()=> handleAddItems(item)}
+              >
                 ADD
               </button>
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
+  )
 }
 
 export default ItemList
