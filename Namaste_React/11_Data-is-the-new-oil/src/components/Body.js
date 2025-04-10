@@ -8,14 +8,14 @@ import '../css/Body.css'
 import { GiLogging } from 'react-icons/gi'
 
 const Body = () => {
-  // console.log(useState())
   const [listOfRestaurants, setListOfRestaurants] = useState([])
   const [filteredRestaurants, setFilteredRestaurants] = useState([])
   const [searchText, setSearchText] = useState('')
+  const onlineStatus = useOnlineStatus()
+  const [tempUserName, setTempUserName] = useState('')
+
   // HOC for RestaurantCard with discount offer
   const RestaurantCardWithDiscount = withDiscountOffer(RestaurantCard)
-
-  // console.log('body rendered', listOfRestaurants)
 
   useEffect(() => {
     fetchData()
@@ -25,7 +25,6 @@ const Body = () => {
     const data = await fetch(
       'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9046136&lng=77.614948&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
     )
-
     const json = await data.json()
     setListOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -33,13 +32,8 @@ const Body = () => {
     setFilteredRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     )
-    // console.log(
-    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-    //     ?.restaurants[1].info.aggregatedDiscountInfoV3
-    // )
   }
 
-  const onlineStatus = useOnlineStatus()
   if (onlineStatus === false)
     return (
       <h1 className="offline">
@@ -55,18 +49,26 @@ const Body = () => {
     setFilteredRestaurants(filtered)
   }
 
-  const {loggedInUser, setUserName } = useContext(UserContext)
+  const handleUserNameSubmit = () => {
+    if (tempUserName.trim().length) {
+      setUserName(tempUserName)
+    }
+    setTempUserName('') // Clear the input box after submission
+  }
+
+  const { loggedInUser, setUserName } = useContext(UserContext)
 
   return (
     <div className="body">
       <div className="search">
-        <label>Username: </label>
+        {/* <label>Username: </label> */}
         <input
-        value={loggedInUser}
-          onChange={(e) => {
-            setUserName(e.target.value)
-          }}
+          type="text"
+          placeholder="Enter User name..."
+          value={tempUserName}
+          onChange={(e) => setTempUserName(e.target.value)}
         />
+        <button onClick={handleUserNameSubmit}>Submit</button>
         {/* <button>User</button> */}
       </div>
       <div className="search">
