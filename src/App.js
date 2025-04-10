@@ -9,7 +9,9 @@ import Error from './components/Error'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import RestaurantMenu from './components/RestaurantMenu'
 import UserContext from './utils/UserContext'
+import { Provider } from 'react-redux'
 import AboutClass from './components/AboutClass'
+import appStore from './utils/appStore'
 // import Grocery from './components/Grocery'
 // now we don't need this
 
@@ -28,6 +30,7 @@ const AppLayout = () => {
   }, [])
 
   return (
+    <Provider store = {appStore}>
     <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
       <div className="app">
         <Header />
@@ -35,6 +38,7 @@ const AppLayout = () => {
         <Footer />
       </div>
     </UserContext.Provider>
+    </Provider>
   )
 }
 
