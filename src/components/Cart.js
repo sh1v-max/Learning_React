@@ -3,7 +3,16 @@ import ItemList from './ItemList'
 import { clearCart } from '../utils/cartSlice'
 
 const Cart = () => {
+  // subscribing to the store using a selector
+  // method 1:
   const cartItems = useSelector((store) => store.cart.items)
+
+  // method 2:
+  const store = useSelector((store) => store)
+  const cartItems2 = store.cart.items
+  //  both method 1 and 2 will give the same result
+  //  but method 1 is more efficient
+  
   console.log(cartItems)
 
   const dispatch = useDispatch()
