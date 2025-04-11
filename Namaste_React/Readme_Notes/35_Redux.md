@@ -447,17 +447,16 @@ function fetchData() {
 
 ---
 
-## ✅ Summary
+## ✅ Redux Toolkit Summary – Detailed by Purpose
 
-| Step             | Tool / Function       | Description                                      |
-|------------------|------------------------|--------------------------------------------------|
-| Define State     | `createSlice()`         | Creates slice + reducers + actions               |
-| Combine State    | `configureStore()`      | Combines reducers and sets up middleware         |
-| Provide Store    | `<Provider store={}>`   | Makes Redux store accessible in React            |
-| Read State       | `useSelector()`         | Selects part of state from store                 |
-| Send Actions     | `useDispatch()`         | Dispatches actions to update state               |
-| Async Logic      | `createAsyncThunk()`    | Handles fetch/async logic with built-in states   |
-
+| Purpose               | Tool / Function          | Description                                                                 |
+|------------------------|---------------------------|-----------------------------------------------------------------------------|
+| 🔧 Create Slice State  | `createSlice()`            | Defines a slice of global state, its initial value, and reducers to update it. Also auto-generates action creators. |
+| 🧩 Create Store        | `configureStore()`         | Combines all reducers, sets up Redux DevTools, and applies middleware like thunk. |
+| 🧬 Provide Store       | `<Provider store={}>`      | Wraps your React app, allowing components to access the Redux store. Must be at the root level. |
+| 👁️ Subscribe / Read    | `useSelector()`            | Reads (subscribes to) specific parts of the state inside components. Triggers re-render on updates. |
+| 🚀 Dispatch Actions    | `useDispatch()`            | Sends actions (from slice or thunk) to the Redux store to update state. |
+| 🌐 Async Logic         | `createAsyncThunk()`       | Handles asynchronous operations like API calls. Auto-generates `pending`, `fulfilled`, and `rejected` action types. |
 
 ---
 
