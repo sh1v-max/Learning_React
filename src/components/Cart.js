@@ -16,6 +16,9 @@ const Cart = () => {
   console.log(cartItems)
 
   const dispatch = useDispatch()
+
+  // Clears the cart by dispatching the clearCart action.
+
   const handleClearCart = () => {
     dispatch(clearCart())
   }
