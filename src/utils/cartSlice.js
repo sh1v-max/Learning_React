@@ -27,7 +27,11 @@ const cartSlice = createSlice({
       // this will console the current state
       console.log(state);
       state.items.length = 0;
-      // state = []
+      // state = [] // but this wont
+      // return { items: [] }; // this will also work
+      // this new object will be replaced inside originalState = {items:[]}
+      // so you can't just write:
+      //? return []
     },
   },
 })
