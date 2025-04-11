@@ -13,7 +13,7 @@ const Cart = () => {
   //  both method 1 and 2 will give the same result
   //  but method 1 is more efficient
   
-  console.log(cartItems)
+  // console.log(cartItems)
 
   const dispatch = useDispatch()
 

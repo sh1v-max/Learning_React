@@ -647,6 +647,49 @@ clearCart: () => ({
 
 
 ---
+- # 🔔 `console.log(current(state))` and `console.log(state)`
+```js
+clearCart: (state) => {
+      //  we need to import the current function to log actual state object before mutation
+      console.log(current(state));
+      // this will console the current state
+      console.log(state);
+      state.items.length = 0;
+      // state = []
+    },
+```
+
+Here’s the **straight-up difference** between the two `console.log`s:
+
+
+### 🥇 `console.log(current(state))`
+
+- Logs the **real, current, plain JavaScript object** — before any mutations.
+- Shows you what the state *actually* looks like at that moment.
+- Good for **debugging** because it's readable, predictable, and not wrapped.
+
+
+
+### 🥈 `console.log(state)`
+
+- Logs the **Immer Proxy** object — looks like your state, but isn't a plain object.
+- You’ll see something like:
+  ```
+  Proxy { items: Array(2), totalPrice: 150 }
+  ```
+- It **tracks** your mutations behind the scenes. What you log here is not final or fully accurate in appearance — it’s a **draft layer**.
+
+### 💥 Core Difference:
+
+| Console | What you see | Mutable? | Proxy? | Purpose |
+|--------|---------------|----------|--------|---------|
+| `current(state)` | Plain object | ❌ | ❌ | Debug actual current state |
+| `state` | Proxy object | ✅ | ✅ | Mutate state using Immer |
+
+So, **`current(state)` shows you the snapshot** 📸  
+And **`state` is the lens you're shaping it through** 🧪
+
+---
 
 ## ✅ Redux Toolkit Summary – Detailed by Purpose
 

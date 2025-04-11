@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -22,8 +22,12 @@ const cartSlice = createSlice({
       state.items.pop();
     },
     clearCart: (state) => {
+      //  we need to import the current function to log actual state object before mutation
+      console.log(current(state));
+      // this will console the current state
+      console.log(state);
       state.items.length = 0;
-      state = []
+      // state = []
     },
   },
 })
