@@ -417,7 +417,7 @@ function fetchData() {
 # Key notes for Best practice
 
 
-- ## 🧩 `reducers` vs `reducer` — What's Happening?
+- ## 🔔 `reducers` vs `reducer` — What's Happening?
 
 Inside your `createSlice({...})`, you're writing:
 
@@ -508,6 +508,64 @@ const cartSlice = {
 So you're exporting:
 - **`cartSlice.reducer`** → for the Redux store
 - **`cartSlice.actions`** → for your components to `dispatch`
+
+---
+- ## 🔔 Updating state in vanilla (older) Redux and Redux-toolkit
+
+
+```js
+// vanilla (older) Redux ==> DON'T MUTATE STATE
+// const newState = [...state.items];
+// newState.items.push(action.payload);
+// return newState
+
+// but in Redux Toolkit, we can mutate the state directly
+// we actually have to mutate the state
+
+state.items.push(action.payload);
+```
+
+
+### 💡 What Does This Mean?
+
+#### 🔴 **Vanilla Redux (Old way)**  
+You are **not allowed to change the state directly**.  
+You must always create a **new copy** of the state and return it.
+
+```js
+const reducer = (state = { items: [] }, action) => {
+  switch (action.type) {
+    case "ADD_ITEM":
+      return {
+        ...state,
+        items: [...state.items, action.payload], // making a new array
+      };
+    default:
+      return state;
+  }
+};
+```
+
+You **make copies** because Redux expects the state to be **immutable** (unchanged).
+
+#### 🟢 **Redux Toolkit (New way)**  
+Redux Toolkit uses a library called **Immer** behind the scenes,  
+which **lets you write code that looks like you’re changing the state**,  
+but it **keeps it immutable automatically**.
+
+```js
+addItem: (state, action) => {
+  state.items.push(action.payload); // looks like mutation, but it's safe
+}
+```
+
+You can **write simpler code** here. Toolkit handles the hard part for you.
+
+### ✅ In Short:
+| Redux Type      | Can you change `state` directly? | Example                         |
+|------------------|-------------------------------|----------------------------------|
+| Vanilla Redux    | ❌ No                          | Must return a new object        |
+| Redux Toolkit    | ✅ Yes (looks like it)         | `state.items.push(...)` is OK   |
 
 
 ---
