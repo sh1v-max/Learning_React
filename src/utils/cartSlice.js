@@ -23,9 +23,9 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       //  we need to import the current function to log actual state object before mutation
-      console.log(current(state));
+      // console.log(current(state));
       // this will console the current state
-      console.log(state);
+      // console.log(state);
       state.items.length = 0;
       // state = [] // but this wont
       // return { items: [] }; // this will also work
@@ -39,3 +39,13 @@ const cartSlice = createSlice({
 export const {addItem, removeItem, clearCart} = cartSlice.actions;
 
 export default cartSlice.reducer
+
+//~ it's roughly like this:
+// {
+//   actions: {
+//     addItem,
+//     removeItem,
+//     clearCart
+//   },
+//   reducers
+// }
