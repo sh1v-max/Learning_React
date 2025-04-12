@@ -1,4 +1,4 @@
-const { sum } = require("../components/sum")
+import { sum } from "../components/sum"
 
 test("sum function should calculate the sum of two numbers", () => {
   const result = sum(3,4)
