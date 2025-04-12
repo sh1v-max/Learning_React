@@ -12,5 +12,5 @@ it("should render RestaurantCard component with props Data", () => {
 });
 
 it("should render RestaurantCard component with Promoted Label", () => {
-  // Home Work - test HOC : withPromtedLabel()
+  // Home Work - test HOC : withPromotedLabel()
 });
