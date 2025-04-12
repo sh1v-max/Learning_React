@@ -25,19 +25,19 @@ it("Should render Header Component with a login button", () => {
   expect(loginButton).toBeInTheDocument();
 });
 
-// it("Should render Header Component with a Cart items 0 ", () => {
-//   render(
-//     <BrowserRouter>
-//       <Provider store={appStore}>
-//         <Header />
-//       </Provider>
-//     </BrowserRouter>
-//   );
+it("Should render Header Component with a Cart items 0 ", () => {g
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>
+  );
 
-//   const cartItems = screen.getByText("Cart - (0 items)");
+  const cartItems = screen.getByText("Cart - (0 items)");
 
-//   expect(cartItems).toBeInTheDocument();
-// });
+  expect(cartItems).toBeInTheDocument();
+});
 
 // it("Should render Header Component with a Cart item ", () => {
 //   render(
