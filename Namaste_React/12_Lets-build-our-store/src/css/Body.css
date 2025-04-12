@@ -1,0 +1,70 @@
+/* ===============search and filter===================== */
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.search input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 250px;
+}
+
+.search button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.search-btn::placeholder {
+  color: gray;
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.search button:hover {
+  background-color: #cc5500;
+}
+
+@media (max-width: 768px) {
+  .search {
+    flex-direction: column;
+  }
+
+  .search input {
+    width: 80%;
+  }
+
+  .search button {
+    width: 50%;
+  }
+}
+
+.title-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 0px 15px 20px ;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #434343;
+}
