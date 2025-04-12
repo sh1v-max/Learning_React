@@ -3,60 +3,137 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../components/Contact";
 import "@testing-library/jest-dom"
 
-
+//  these are individual test cases
 test("Should load contact us component", () => {
   render(<Contact />);
   
-  const heading = screen.getByRole("heading");
+  const heading = screen.getAllByRole("heading");
   
   // Assertion
   expect(heading).toBeInTheDocument();
 });
 
-// describe("Contact Us Page Test Case", () => {
-  // beforeAll(() => {
-  //   console.log("Before All");
-  // });
+text("Should load button inside Contact component", () => {
+  render(<Contact />);
 
-  // beforeEach(() => {
-  //   console.log("Before Each");
-  // });
+  const button = screen.getByRole("button");
 
-  // afterAll(() => {
-  //   console.log("After All");
-  // });
+  // Assertion
+  expect(button).toBeInTheDocument();
+});
 
-  // afterEach(() => {
-  //   console.log("After Each");
-  // });
-  // it("Should load button inside Contact component", () => {
-  //   render(<Contact />);
+text("Should load input name inside Contact component", () => {
+  render(<Contact />);
 
-  //   const button = screen.getByRole("button");
+  const inputName = screen.getByPlaceholderText("name");
 
-  //   // Assertion
-  //   expect(button).toBeInTheDocument();
-  // });
+  // Assertion
+  expect(inputName).toBeInTheDocument();
+});
 
-  // it("Should load input name inside Contact component", () => {
-  //   render(<Contact />);
+text("Should load 2 input boxes on the Contact component", () => {
+  render(<Contact />);
 
-  //   const inputName = screen.getByPlaceholderText("name");
+  // Querying
+  const inputBoxes = screen.getAllByRole("textbox");
 
-  //   // Assertion
-  //   expect(inputName).toBeInTheDocument();
-  // });
+  //console.log(inputBoxes.length);
 
-  // it("Should load 2 input boxes on the Contact component", () => {
-  //   render(<Contact />);
+  // Assertion
 
-  //   // Querying
-  //   const inputBoxes = screen.getAllByRole("textbox");
+  expect(inputBoxes.length).toBe(2);
+});
 
-  //   //console.log(inputBoxes.length);
+// these are grouped test cases
+describe("Contact Us Page Test Case", () => {
 
-  //   // Assertion
+  // we can write "it", instead of "test", it works fine
+  it("Should load contact us component", () => {
+    render(<Contact />);
+    
+    const heading = screen.getAllByRole("heading");
+    
+    // Assertion
+    expect(heading).toBeInTheDocument();
+  });
+  
+  it("Should load button inside Contact component", () => {
+    render(<Contact />);
+  
+    const button = screen.getByRole("button");
+  
+    // Assertion
+    expect(button).toBeInTheDocument();
+  });
+  
+  it("Should load input name inside Contact component", () => {
+    render(<Contact />);
+  
+    const inputName = screen.getByPlaceholderText("name");
+  
+    // Assertion
+    expect(inputName).toBeInTheDocument();
+  });
+  
+  it("Should load 2 input boxes on the Contact component", () => {
+    render(<Contact />);
+  
+    // Querying
+    const inputBoxes = screen.getAllByRole("textbox");
+  
+    //console.log(inputBoxes.length);
+  
+    // Assertion
+  
+    expect(inputBoxes.length).toBe(2);
+  });
+});
 
-  //   expect(inputBoxes.length).toBe(2);
-  // });
-// });
+describe("Contact Us Page Test Case", () => {
+  beforeAll(() => {
+    console.log("Before All");
+  });
+
+  beforeEach(() => {
+    console.log("Before Each");
+  });
+
+  afterAll(() => {
+    console.log("After All");
+  });
+
+  afterEach(() => {
+    console.log("After Each");
+  });
+
+  it("Should load button inside Contact component", () => {
+    render(<Contact />);
+
+    const button = screen.getByRole("button");
+
+    // Assertion
+    expect(button).toBeInTheDocument();
+  });
+
+  it("Should load input name inside Contact component", () => {
+    render(<Contact />);
+
+    const inputName = screen.getByPlaceholderText("name");
+
+    // Assertion
+    expect(inputName).toBeInTheDocument();
+  });
+
+  it("Should load 2 input boxes on the Contact component", () => {
+    render(<Contact />);
+
+    // Querying
+    const inputBoxes = screen.getAllByRole("textbox");
+
+    //console.log(inputBoxes.length);
+
+    // Assertion
+
+    expect(inputBoxes.length).toBe(2);
+  });
+});
