@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+/* * {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+} */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin-top: 90px;
+  font-family: "Poppins", sans-serif;
+  background-color: #FFF8F1;
+}
+
+/* ==================== Header ============================ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  background: rgba(225, 225, 225, 0.96);
+  color: #303030;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================== Logo Styling ==========================*/
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(197, 197, 197, 0.9);
+  transition: border 0.3s ease;
+}
+
+.logo:hover {
+  border: 1px solid #ff4d00;
+}
+
+/* ======================= Nav Bar Styling =================== */
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  padding: 10px;
+}
+
+.nav-items li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-items li:hover a {
+  color: #ff4d00;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========================== Login Button ======================= */
+.login-btn {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #cc5500;
+  transform: scale(1.05);
+}
+
+/* ================= Responsive Design ==================== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .nav-items ul {
+    gap: 5px;
+  }
+
+  .nav-items li {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .login-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    align-items: center;
+    padding: 15px;
+    height: auto; 
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    right: 10px;
+    top: 25px;
+    transition: background-color .3s ease, transform 0.2s ease;
+  }
+  .menu-icon:hover {
+    color: #ff4d00;
+  }
+
+  .nav-items {
+    display: none;
+    width: 30%;
+    text-align: center;
+    background: rgba(225, 225, 225, 0.96);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .nav-items.open {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-items ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .nav-items li {
+    padding: 10px 0;
+  }
+
+  .login-btn {
+    width: 60%;
+    margin: 10px auto;
+  }
+}
+
+
+/* ======================= Footer ==================== */
+.footer {
+  background-color: rgba(225, 225, 225);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+  color: #303030;
+}
+
+.footer-logo h2 {
+  color: #ff6600;
+}
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.footer-links li:hover {
+  text-decoration: underline;
+  color: #ff4d00;
+}
+
+/* =============About page======================== */
