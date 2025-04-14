@@ -7,7 +7,7 @@ const Error = () => {
     <div className="error-container">
       <main className="error-content">
         <h1>Oops!</h1>
-        <h2>Something went wrong</h2>
+        <h2>Something went wrong... </h2>
         <p>
           {err.status}: {err.statusText}
         </p>
